@@ -15,19 +15,19 @@
       <!-- site icon -->
       <link rel="icon" href="images/fevicon.png" type="image/png" />
       <!-- bootstrap css -->
-      <link rel="stylesheet" href="/css/adminCss/bootstrap.min.css" />
+      <link rel="stylesheet" href="adminCss/bootstrap.min.css" />
       <!-- site css -->
-      <link rel="stylesheet" href="/css/adminCss/style.css" />
+      <link rel="stylesheet" href="adminCss/style.css" />
       <!-- responsive css -->
-      <link rel="stylesheet" href="/css/adminCss/responsive.css" />
+      <link rel="stylesheet" href="adminCss/responsive.css" />
       <!-- color css -->
-      <link rel="stylesheet" href="/css/adminCss/colors.css" />
+      <link rel="stylesheet" href="adminCss/colors.css" />
       <!-- select bootstrap -->
-      <link rel="stylesheet" href="/css/adminCss/bootstrap-select.css" />
+      <link rel="stylesheet" href="adminCss/bootstrap-select.css" />
       <!-- scrollbar css -->
-      <link rel="stylesheet" href="/css/adminCss/perfect-scrollbar.css" />
+      <link rel="stylesheet" href="adminCss/perfect-scrollbar.css" />
       <!-- custom css -->
-      <link rel="stylesheet" href="css/adminCss/custom.css" />
+      <link rel="stylesheet" href="adminCss/custom.css" />
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
