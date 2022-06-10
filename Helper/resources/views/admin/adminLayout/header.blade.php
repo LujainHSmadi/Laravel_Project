@@ -45,7 +45,7 @@
    <ul class="sidebar-menu do-nicescrol">
       <li class="sidebar-header">MAIN NAVIGATION</li>
       <li>
-        <a href="index.html">
+        <a href="/index">
           <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
@@ -57,8 +57,13 @@
       </li>
 
       <li>
-        <a href="forms.html">
-          <i class="zmdi zmdi-format-list-bulleted"></i> <span>Forms</span>
+        <a href="/cases">
+          <i class="zmdi zmdi-format-list-bulleted"></i> <span>Cases</span>
+        </a>
+      </li>
+      <li>
+        <a href="/doners">
+          <i class="zmdi zmdi-slideshare""></i> <span>doners</span>
         </a>
       </li>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+    
 <div class="clearfix"></div>
 	
   <div class="content-wrapper">
@@ -148,7 +148,4 @@
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
     <!--End Back To Top Button-->
 
-
-
-    
 @endsection

@@ -21,3 +21,5 @@ Route::get('/contact','App\Http\Controllers\TemplateController@contact' );
 
 
 Route::get('/index','App\Http\Controllers\AdminTemplateController@index' );
+Route::get('/cases','App\Http\Controllers\AdminTemplateController@cases' );
+Route::get('/doners','App\Http\Controllers\AdminTemplateController@donate' );
