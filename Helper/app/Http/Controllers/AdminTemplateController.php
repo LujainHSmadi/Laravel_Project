@@ -15,4 +15,7 @@ class AdminTemplateController extends Controller
     public function donate(){
         return view('admin.adminPages.donate');
     }
+    public function createAdmin(){
+        return view('admin.adminPages.createAdmin');
+    }
 }
