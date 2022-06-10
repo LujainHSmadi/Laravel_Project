@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\AdminTemplateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +18,6 @@ Route::get('/','App\Http\Controllers\TemplateController@index' );
 Route::get('/about','App\Http\Controllers\TemplateController@about' );
 Route::get('/services','App\Http\Controllers\TemplateController@services' );
 Route::get('/contact','App\Http\Controllers\TemplateController@contact' );
+
+
+Route::get('/index','App\Http\Controllers\AdminTemplateController@index' );
