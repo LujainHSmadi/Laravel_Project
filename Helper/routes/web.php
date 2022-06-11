@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\AdminTemplateController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,5 @@ Route::get('/index','App\Http\Controllers\AdminTemplateController@index' );
 Route::get('/cases','App\Http\Controllers\AdminTemplateController@cases' );
 Route::get('/doners','App\Http\Controllers\AdminTemplateController@donate' );
 Route::get('/createAdmin','App\Http\Controllers\AdminTemplateController@createAdmin' );
+
+Route::resource('admin', AdminController::class);
