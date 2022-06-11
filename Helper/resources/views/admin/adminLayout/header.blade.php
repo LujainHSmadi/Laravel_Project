@@ -51,7 +51,7 @@
       </li>
 
       <li>
-        <a href="icons.html">
+        <a href="/donate">
           <i class="zmdi zmdi-invert-colors"></i> <span>Donate</span>
         </a>
       </li>

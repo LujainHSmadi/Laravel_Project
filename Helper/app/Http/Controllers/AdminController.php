@@ -75,7 +75,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = Admin::find($id);
-        return view('admin.adminPages.adminEdit')->with('admin', $admin);
+        return view('admin.adminPages.adminEdit')->with('admins', $admin);
 
     }
 

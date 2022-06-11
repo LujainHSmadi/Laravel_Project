@@ -2,10 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Donate extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name , email ,number, address,tool'];
+
+    public function setTools($value)
+    {
+        $this->attributes['tools']=json_encode($value);
+    }
+    
+    public function getTools($value)
+    {
+        $this->attributes['tools']=json_decode($value);
+    }
+
 }
