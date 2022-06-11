@@ -40,6 +40,11 @@ class RegisterController extends Controller
         }
         
       
+
+        $users = Register::all();
+
+        return view('admin.adminPages.usersInfo', compact('users'));
+
     }
 
 

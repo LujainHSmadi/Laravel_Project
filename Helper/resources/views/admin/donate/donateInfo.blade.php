@@ -60,6 +60,9 @@
                      <th>#</th>
                      <th>Name</th>
                      <th>Email</th>
+                     <th>Number</th>
+                     <th>Address</th>
+                     <th>Tool</th>
                      <th>Create Date</th>
                      <th>Update Date</th>
                      <th>Edit</th>
@@ -70,16 +73,25 @@
                     @php
                         $i = 0;
                     @endphp
-                    @foreach ($admins as $info)
+                    @foreach ($donates as $info)
                     <tr>
                     <td>{{++$i}}</td>					
                     <td>{{$info->name}}</td>
                     <td>{{$info->email}}</td>
+                    <td>{{$info->number}}</td>
+                    <td>{{$info->address}}</td>
+                     <td>
+                    @for ($i = 0; $i < $count; $i++)
+                        
+                    @endfor($info->tools as $tool)
+                   {{$tool}}
+                    @endforeach
+                    </td>
                     <td>{{$info->created_at}}</td>
                     <td>{{$info->updated_at}}</td>
-                    <td> <a href="admin/{{$info->id}}/edit" class="btn btn-primary">Edit</button></a></td>					
+                    <td> <a href="donate/{{$info->id}}/edit" class="btn btn-primary">Edit</button></a></td>					
                     <td>
-                       <form action="{{ route('admin.destroy',$info->id )}}" method="post">
+                       <form action="{{ route('donate.destroy',$info->id )}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

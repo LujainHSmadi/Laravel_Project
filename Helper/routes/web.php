@@ -5,6 +5,10 @@ use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\AdminTemplateController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
+
+
+use App\Http\Controllers\DonateController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +26,10 @@ Route::get('/services','App\Http\Controllers\TemplateController@services' );
 Route::get('/contact','App\Http\Controllers\TemplateController@contact' );
 
 
-Route::get('/index','App\Http\Controllers\AdminTemplateController@index' );
-Route::get('/cases','App\Http\Controllers\AdminTemplateController@cases' );
-Route::get('/doners','App\Http\Controllers\AdminTemplateController@donate' );
-Route::get('/create','App\Http\Controllers\AdminTemplateController@createAdmin' );
-Route::get('/adminInfo','App\Http\Controllers\AdminTemplateController@adminInfo');
+
+
 Route::resource('admin', AdminController::class);
+
 
 Route::view('register','pages.register');
 Route::view('signup','register/signup');
@@ -38,4 +40,8 @@ Route::post('signup',[RegisterController::class,'data']);
 
 
 
+
+
+Route::resource('users', RegisterController::class);
+Route::resource('donate', DonateController::class);
 
