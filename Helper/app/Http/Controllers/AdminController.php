@@ -14,7 +14,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-            //return view('admin.adminPages.createAdmin');
+
+        $admin = Admin::all();
+        return view('admin.adminPages.adminInfo')->with('admins', $admin);
 
     }
 
@@ -25,7 +27,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('/create');
+
+        return view('admin.adminPages.create');
 
     }
 
@@ -58,9 +61,9 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show($id)
     {
-        //
+
     }
 
     /**
@@ -69,9 +72,11 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit($id)
     {
-        //
+        $admin = Admin::find($id);
+        return view('admin.adminPages.adminEdit')->with('admins', $admin);
+
     }
 
     /**
@@ -81,9 +86,15 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, $id)
     {
-        //
+        $admin = Admin::find($id);
+        $admin->name = $request->input('name');
+        $admin->email = $request->input('email');
+        $admin->password = $request->input('password');
+        $admin->save();
+        return redirect('/admin/create')->with('success', "Admin Edited");
+
     }
 
     /**
@@ -92,8 +103,11 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy($id)
     {
-        //
+        $admins = Admin::find($id);
+        $admins->delete();
+        return redirect('/admin')->with('success', 'admin Deleted');
+
     }
 }

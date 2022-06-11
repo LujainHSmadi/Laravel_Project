@@ -21,9 +21,6 @@ Route::get('/services','App\Http\Controllers\TemplateController@services' );
 Route::get('/contact','App\Http\Controllers\TemplateController@contact' );
 
 
-Route::get('/index','App\Http\Controllers\AdminTemplateController@index' );
-Route::get('/cases','App\Http\Controllers\AdminTemplateController@cases' );
-Route::get('/doners','App\Http\Controllers\AdminTemplateController@donate' );
-Route::get('/create','App\Http\Controllers\AdminTemplateController@createAdmin' );
-Route::get('/adminInfo','App\Http\Controllers\AdminTemplateController@adminInfo');
+
+
 Route::resource('admin', AdminController::class);
