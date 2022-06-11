@@ -14,9 +14,13 @@ class AdminController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
         $admin = Admin::all();
         return view('admin.adminPages.adminInfo')->with('admins', $admin);
+=======
+            return view('admin.adminPages.createAdmin');
+>>>>>>> da52d80c0bbe152511d044873d2fc797e45c42b6
 
     }
 

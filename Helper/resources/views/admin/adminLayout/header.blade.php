@@ -68,7 +68,11 @@
       </li>
 
       <li>
+<<<<<<< HEAD
         <a href="register.html" >
+=======
+        <a href="/users">
+>>>>>>> da52d80c0bbe152511d044873d2fc797e45c42b6
           <i class="zmdi zmdi-account-circle"></i> <span>Users</span>
         </a>
       </li>
