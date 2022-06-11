@@ -74,7 +74,7 @@
       </li>
 
       <li>
-        <a href="/admin/create" target="_blank">
+        <a href="/adminInfo" >
           <i class="zmdi zmdi-lock"></i> <span>Admins</span>
         </a>
       </li>
@@ -91,7 +91,7 @@
        <i class="icon-menu menu-icon"></i>
      </a>
     </li>
-    
+
   </ul>
 
   <ul class="navbar-nav align-items-center right-nav-link">

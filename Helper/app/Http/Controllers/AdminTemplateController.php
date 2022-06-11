@@ -18,4 +18,7 @@ class AdminTemplateController extends Controller
     public function createAdmin(){
         return view('admin.adminPages.createAdmin');
     }
+    public function adminInfo(){
+        return view('admin.adminPages.adminInfo');
+    }
 }

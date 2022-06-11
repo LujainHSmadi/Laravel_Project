@@ -18,7 +18,7 @@
            <hr>
             <form action="{{route('admin.store')}}" method="POST">
               @csrf
-              
+
            <div class="form-group">
             <label for="input-1">Name</label>
             <input type="text" class="form-control" id="input-1" placeholder="Enter Your Name" name="name">
@@ -31,7 +31,7 @@
             <label for="input-4">Password</label>
             <input type="password" class="form-control" name="password" id="input-4" placeholder="Enter Password">
            </div>
-           
+
            <div class="form-group">
             <input type="submit" class="btn btn-light px-5 icon-lock" value="Register">
           </div>
