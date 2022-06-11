@@ -60,7 +60,6 @@
                      <th>#</th>
                      <th>Name</th>
                      <th>Email</th>
-                     <th>Pasword</th>
                      <th>Create Date</th>
                      <th>Update Date</th>
                      <th>Edit</th>
@@ -76,9 +75,8 @@
                     <td>{{++$i}}</td>					
                     <td>{{$info->name}}</td>
                     <td>{{$info->email}}</td>
-                    <td>{{$info->password}}</td>
-                    <td>{{$info->create_date}}</td>
-                    <td>{{$info->update_date}}</td>
+                    <td>{{$info->created_at}}</td>
+                    <td>{{$info->updated_at}}</td>
                     <td> <a href="admin/{{$info->id}}/edit" class="btn btn-primary">Edit</button></a></td>					
                     <td>
                        <form action="{{ route('admin.destroy',$info->id )}}" method="post">

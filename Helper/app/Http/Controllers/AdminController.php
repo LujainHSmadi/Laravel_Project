@@ -51,7 +51,7 @@ class AdminController extends Controller
         $admin->password = $request->input('password');
         $admin->save();
         // $admin = Admin::create($request->all);
-        return redirect('/index')->with('success', 'Admin Created');
+        return redirect('/admin')->with('success', 'Admin Created');
 
     }
 
@@ -75,7 +75,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = Admin::find($id);
-        return view('admin.adminPages.adminEdit')->with('admins', $admin);
+        return view('admin.adminPages.adminEdit')->with('admin', $admin);
 
     }
 

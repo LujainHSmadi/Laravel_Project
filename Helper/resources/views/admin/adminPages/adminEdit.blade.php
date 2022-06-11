@@ -16,8 +16,9 @@
            <div class="card-body">
            <div class="card-title">Create Admin</div>
            <hr>
-            <form action="{{route('admin.update',$id)}}" method="POST">
+            <form action="{{route('admin.update',$admin->id)}}" method="POST">
               @csrf
+              @method('PUT')
 
            <div class="form-group">
             <label for="input-1">Name</label>
