@@ -36,17 +36,18 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-                'name' => 'required',
-                'email' => 'required',
-                'password' => 'required',
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
         ]);
-        $admin = Admin::all;
+        $admin = new Admin;
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
         $admin->password = $request->input('password');
         $admin->save();
-        return view()
+        // $admin = Admin::create($request->all);
+        return redirect('/index')->with('success', 'Admin Created');
 
     }
 

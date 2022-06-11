@@ -74,7 +74,7 @@
       </li>
 
       <li>
-        <a href="login.html" target="_blank">
+        <a href="/admin/create" target="_blank">
           <i class="zmdi zmdi-lock"></i> <span>Admins</span>
         </a>
       </li>
