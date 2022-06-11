@@ -21,4 +21,7 @@ class AdminTemplateController extends Controller
     public function adminInfo(){
         return view('admin.adminPages.adminInfo');
     }
+    public function usersInfo(){
+        return view('admin.adminPages.usersInfo');
+    }
 }

@@ -14,7 +14,9 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        //
+        $users = Register::all();
+
+        return view('admin.adminPages.usersInfo', compact('users'));
     }
 
     /**

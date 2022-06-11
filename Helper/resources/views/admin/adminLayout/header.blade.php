@@ -68,13 +68,13 @@
       </li>
 
       <li>
-        <a href="register.html" target="_blank">
+        <a href="/users">
           <i class="zmdi zmdi-account-circle"></i> <span>Users</span>
         </a>
       </li>
 
       <li>
-        <a href="/adminInfo" >
+        <a href="/admin" >
           <i class="zmdi zmdi-lock"></i> <span>Admins</span>
         </a>
       </li>
