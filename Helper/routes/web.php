@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\AdminTemplateController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,4 @@ Route::get('/contact','App\Http\Controllers\TemplateController@contact' );
 
 
 Route::resource('admin', AdminController::class);
+Route::resource('users', RegisterController::class);
