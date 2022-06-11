@@ -77,10 +77,8 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->password}}</td>
                         <td scope = "row">
-
-
                                     <form action="">
-                                          <a href="" class="btn btn-primary btn-light px-5">edit</a>
+                                    <a href="" class="btn btn-primary btn-light px-5">edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger  px-4">delete</button>

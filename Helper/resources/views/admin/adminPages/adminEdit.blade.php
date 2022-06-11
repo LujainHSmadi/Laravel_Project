@@ -16,7 +16,7 @@
            <div class="card-body">
            <div class="card-title">Create Admin</div>
            <hr>
-            <form action="{{route('admin.update')}}" method="POST">
+            <form action="{{route('admin.update',{{$id}})" method="POST">
               @csrf
 
            <div class="form-group">
