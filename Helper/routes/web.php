@@ -25,4 +25,5 @@ Route::resource('admin', AdminController::class);
 Route::resource('users', RegisterController::class);
 Route::resource('donate', DonateController::class);
 Route::get('adminLogin', 'App\Http\Controllers\AdminController@login');
-Route::get('/login', 'App\Http\Controllers\AdminController@authLogin');
+Route::get('/login', 'App\Http\Controllers\AdminController@authLogin')->name('login-auth');
+Route::get('/loginout', 'App\Http\Controllers\AdminController@logout')->name('logout');

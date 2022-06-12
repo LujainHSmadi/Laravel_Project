@@ -40,12 +40,23 @@
 		 		<img src="assets/images/logo-icon.png" alt="logo icon">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
-		    <form action="" method="get">
+		    <form action="{{route('login-auth')}}" method="get">
+          @if (Session::has('success'))
+          
+            <div class="alert alert-success">{{Session::get('Success')}}</div>
+          
+          @endif
+           @if (Session::has('fail'))
+          
+            <div class="alert alert-danger">{{Session::get('fail')}}</div>
+          
+          @endif
                 @csrf
+
 			  <div class="form-group">
 			  <label for="exampleInputUsername" class="sr-only">email</label>
 			   <div class="position-relative has-icon-right">
-				  <input type="text" id="exampleInputUsername" class="form-control input-shadow" placeholder="Enter Username" name="email">
+				  <input type="text" id="exampleInputUsername" class="form-control input-shadow" placeholder="Enter Username" name="email" value='{{old('email')}}'>
 				  <div class="form-control-position">
 					  <i class="icon-user"></i>
 				  </div>

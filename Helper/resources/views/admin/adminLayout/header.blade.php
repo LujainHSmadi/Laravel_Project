@@ -105,14 +105,17 @@
         <a href="javaScript:void();">
            <div class="media">
             <div class="media-body">
-            <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-            <p class="user-subtitle">mccoy@example.com</p>
+            <h6 class="mt-2 user-title">{{session('name')}}</h6>
+            <p class="user-subtitle">{{session('email')}}</p>
             </div>
            </div>
           </a>
         </li>
         <li class="dropdown-divider"></li>
-        <li class="dropdown-item"><i class="icon-power mr-2"></i> Logout</li>
+        <li class="dropdown-item"><i class="icon-power mr-2"></i>
+          <a href="/loginout"> Logout
+          </a>
+          </li>
       </ul>
     </li>
   </ul>

@@ -14,7 +14,7 @@
       <div class="col-lg-6">
          <div class="card">
            <div class="card-body">
-           <div class="card-title">Create Admin</div>
+           <div class="card-title">Edit Admin</div>
            <hr>
             <form action="{{route('admin.update',$admins->id)}}" method="POST">
               @csrf
@@ -34,7 +34,7 @@
            </div>
 
            <div class="form-group">
-            <input type="submit" class="btn btn-light px-5 icon-lock" value="Register">
+            <input type="submit" class="btn btn-light px-5 icon-lock" value="Edit">
           </div>
           </form>
          </div>
