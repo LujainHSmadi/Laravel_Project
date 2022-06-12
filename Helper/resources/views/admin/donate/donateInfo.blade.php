@@ -10,9 +10,7 @@
     <div class="container-fluid">
 
   <!--Start Dashboard Content-->
-  <div class="form-group">
-    <a href="{{route('admin.create')}}" class="btn btn-light px-5">Create Admin</a>
-  </div>
+  
 	<div class="card mt-3">
     <div class="card-content">
         <div class="row row-group m-0">
@@ -81,11 +79,11 @@
                     <td>{{$info->number}}</td>
                     <td>{{$info->address}}</td>
                      <td>
-                    @for ($i = 0; $i < $count; $i++)
-                        
-                    @endfor($info->tools as $tool)
-                   {{$tool}}
-                    @endforeach
+                   {{-- @foreach ($info->tools as $item)
+                       {{$item}}
+                   @endforeach --}}
+                  {{$info->tools}}
+                    
                     </td>
                     <td>{{$info->created_at}}</td>
                     <td>{{$info->updated_at}}</td>
@@ -95,8 +93,8 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-      </td>					
+                       </form>
+                       </td>					
                    </tr>
                     @endforeach
                    

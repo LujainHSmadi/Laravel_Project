@@ -110,4 +110,8 @@ class AdminController extends Controller
         return redirect('/admin')->with('success', 'admin Deleted');
 
     }
+
+    function login(){
+        return view('admin.adminpages.login');
+    }
 }

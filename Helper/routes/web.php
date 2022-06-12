@@ -45,3 +45,7 @@ Route::post('signup',[RegisterController::class,'data']);
 Route::resource('users', RegisterController::class);
 Route::resource('donate', DonateController::class);
 
+
+
+Route::get('adminLogin','App\Http\Controllers\AdminController@login');
+
