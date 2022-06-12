@@ -28,3 +28,4 @@ Route::get('/contact','App\Http\Controllers\TemplateController@contact' );
 Route::resource('admin', AdminController::class);
 Route::resource('users', RegisterController::class);
 Route::resource('donate', DonateController::class);
+Route::get('adminLogin','App\Http\Controllers\AdminController@login');
