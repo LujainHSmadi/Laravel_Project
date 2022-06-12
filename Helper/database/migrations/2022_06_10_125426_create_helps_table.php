@@ -16,7 +16,11 @@ class CreateHelpsTable extends Migration
         Schema::create('helps', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+<<<<<<< HEAD
             $table->string('phone');
+=======
+            $table->string('Phone');
+>>>>>>> 54be97b1724ffa474c157f8e3fa6c4de322ed548
             $table->string('address');
             $table->text('case_image');
             $table->text('identity_image');
