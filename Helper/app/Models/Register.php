@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Register extends Model
 {
-    protected $fillable = ['name , email , password'];
+
+    //protected $table="registers";
+    protected $fillable=[
+        'name',
+        'email',
+        'password'
+    ];
+    use HasFactory;
+
+
+
 }

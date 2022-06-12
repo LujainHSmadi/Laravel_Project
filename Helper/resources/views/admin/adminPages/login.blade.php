@@ -40,7 +40,8 @@
 		 		<img src="assets/images/logo-icon.png" alt="logo icon">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
-		    <form>
+		    <form action="" method="GET">
+                @csrf
 			  <div class="form-group">
 			  <label for="exampleInputUsername" class="sr-only">email</label>
 			   <div class="position-relative has-icon-right">

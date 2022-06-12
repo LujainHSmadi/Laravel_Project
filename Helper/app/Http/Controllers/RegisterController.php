@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Register;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -12,12 +13,64 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function data(Request $request)
     {
+
+        $validate = $request->validate([
+            'name' => 'required|unique:registers|max:255',
+            'email' => 'required|unique:registers|email',
+            'password' => 'required|max:25|min:8|'
+
+        ]);
+     
+    
+    
+         if($request->pass !== $request->re_pass){
+             
+           return redirect('signup')->with('failure','password does not match');
+                 }else{
+            $data=new Register;
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $password = $request->pass;
+        $hashed = Hash::make($password);
+        $data->password =$hashed;
+        $data->save();
+           return redirect('/login');
+        }
+        
+      
+
         $users = Register::all();
 
         return view('admin.adminPages.usersInfo', compact('users'));
+
     }
+
+
+    public function user(Request $request){
+    
+        $email=$request->email;
+        $password=$request->pass;
+        $user= Register::where('email',$email)->first();
+        
+        if(isset($user)){
+        
+        if(Hash::check($password,$user->password)==true){
+        
+            $request->session()->put('email',$user['email']);
+            return redirect('home');
+        }
+        else
+        {
+            return redirect('login')->with('incorrect_password' , 'Password Incorrect');
+        }
+
+       }else
+       {
+           return "Email Does not Exist"; 
+       }
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -39,6 +92,9 @@ class RegisterController extends Controller
     {
         //
     }
+
+
+    
 
     /**
      * Display the specified resource.
