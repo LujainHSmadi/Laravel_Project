@@ -42,14 +42,20 @@ class AdminController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email|unique:admins',
+            'password' => 'required|min:8',
         ]);
         $admin = new Admin;
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
         $admin->password = $request->input('password');
-        $admin->save();
+         $admin->save();
+        // if($req){
+        //     return back() ->with('sucsess','You have registerd successfuly');
+        // }
+        // else{
+        //     return back() ->with('fail','You have not registerd ');
+        // }
         // $admin = Admin::create($request->all);
         return redirect('/admin')->with('success', 'Admin Created');
 
@@ -91,7 +97,6 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
-        $admin->number = $request->input('number');
         $admin->password = $request->input('password'); 
         $admin->save();
         return redirect('/admin/create')->with('success', "Admin Edited");
@@ -114,5 +119,19 @@ class AdminController extends Controller
 
     function login(){
         return view('admin.adminpages.login');
+    }
+    function authLogin(Request $request){
+       $request->validate([
+        'email'=>'required|email|unique:admins',
+        'password'=>'required|min:8'
+       ]);
+       $admin = Admin::where('email', '=', $request->email)->first();
+       if($request->password ===$admin->password){
+            $request->session()->put('loginId',$admin->id);
+            return redirect('/admin');
+       }
+       else{
+        return "not match";
+       }
     }
 }

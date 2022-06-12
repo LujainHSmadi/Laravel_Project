@@ -22,14 +22,19 @@
            <div class="form-group">
             <label for="input-1">Name</label>
             <input type="text" class="form-control" id="input-1" placeholder="Enter Your Name" name="name">
+            <span class ="text-danger">@error('name') {{$message}} @enderror</span>
            </div>
            <div class="form-group">
             <label for="input-2">Email</label>
-            <input type="text" class="form-control" name="email" id="input-2" placeholder="Enter Your Email Address">
+            <input type="email" class="form-control" name="email" id="input-2" placeholder="Enter Your Email Address">
+              <span class ="text-danger">@error('email') {{$message}} @enderror</span>
+
            </div>
            <div class="form-group">
             <label for="input-4">Password</label>
             <input type="password" class="form-control" name="password" id="input-4" placeholder="Enter Password">
+               <span class ="text-danger">@error('password') {{$message}} @enderror</span>
+
            </div>
 
            <div class="form-group">

@@ -40,7 +40,7 @@
 		 		<img src="assets/images/logo-icon.png" alt="logo icon">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
-		    <form action="/admin" method="get">
+		    <form action="" method="get">
                 @csrf
 			  <div class="form-group">
 			  <label for="exampleInputUsername" class="sr-only">email</label>
@@ -49,6 +49,7 @@
 				  <div class="form-control-position">
 					  <i class="icon-user"></i>
 				  </div>
+                  <span class ="text-danger">@error('email') {{$message}} @enderror</span>
 			   </div>
 			  </div>
 			  <div class="form-group">
@@ -58,6 +59,8 @@
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
 				  </div>
+                  <span class ="text-danger">@error('password') {{$message}} @enderror</span>
+
 			   </div>
 			  </div>
 			<div class="form-row">
