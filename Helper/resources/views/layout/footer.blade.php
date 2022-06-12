@@ -7,11 +7,11 @@
               <div class="col-12"><a href="index.html"><img src="images/logo-inverse-415x103.png" alt="" width="207" height="51"/></a></div>
               <div class="col-12">
                 <ul class="footer-minimal-nav">
-                  <li><a href="about-us.html">About Us</a></li>
+                  <li><a href="about">About Us</a></li>
                   <li><a href="#">Causes</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">Team</a></li>
-                  <li><a href="contacts.html">Contacts</a></li>
+                  <li><a href="services">services</a></li>
+                  <li><a href="about">Team</a></li>
+                  <li><a href="contact">Contacts</a></li>
                 </ul>
               </div>
               <div class="col-12">
@@ -24,7 +24,7 @@
                 </ul>
               </div>
             </div>
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Helper</span><span>.&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span>Design&nbsp;by&nbsp;<a href="https://www.templatemonster.com/">Templatemonster</a></p>
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Helper</span><span>.&nbsp;</span><span>All Rights Reserved.</span><span></span></p>
           </div>
         </div>
       </footer>

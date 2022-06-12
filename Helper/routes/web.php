@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\AdminTemplateController;
+use App\Http\Controllers\HelpController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +22,8 @@ Route::get('/contact','App\Http\Controllers\TemplateController@contact' );
 
 
 Route::get('/index','App\Http\Controllers\AdminTemplateController@index' );
+
+
+// help
+
+Route::resource('/',HelpController::class);
