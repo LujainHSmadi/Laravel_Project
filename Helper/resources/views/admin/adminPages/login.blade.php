@@ -40,7 +40,7 @@
 		 		<img src="assets/images/logo-icon.png" alt="logo icon">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
-		    <form action="" method="GET">
+		    <form action="/admin" method="get">
                 @csrf
 			  <div class="form-group">
 			  <label for="exampleInputUsername" class="sr-only">email</label>
@@ -69,7 +69,7 @@
 			 </div>
 			
 			</div>
-			 <button type="button" class="btn btn-light btn-block">Sign In</button>
+			 <button type="submit" class="btn btn-light btn-block">Sign In</button>
 			 
 			</div>
 			 
