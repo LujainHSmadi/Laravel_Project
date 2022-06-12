@@ -11,6 +11,10 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="register/css/style.css">
+    <style>
+     
+
+    </style>
 </head>
 <body>
 
@@ -28,7 +32,7 @@
                             {{ $message }}
                         </div>
                         @elseif ($message= Session::get('status'))
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger" role="alert" style="color:red">
                             {{ $message }}
                         </div>
                         @endif
@@ -38,14 +42,14 @@
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"/>
                                 @error('name')
-                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                 <div class="alert alert-danger mt-1 mb-1" style="color:red">{{ $message }}</div>
                                     @enderror
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="Your Email" />
                                 @error('email')
-                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                <div class="alert alert-danger mt-1 mb-1" style="color:red">{{ $message }}</div>
                                    @enderror
                             </div>
                             <div class="form-group">
@@ -53,7 +57,7 @@
                                 <input type="password" name="password" id="pass" placeholder="Password"/>
                             </div>
                             @error('pass')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                            <div class="alert alert-danger mt-1 mb-1" style="color:red">{{ $message }}</div>
                                @enderror
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
