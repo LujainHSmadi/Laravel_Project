@@ -7,5 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Help extends Model
 {
-    use HasFactory;
+
+    protected $fillable = [
+    'name' ,
+    'phone' ,
+    'address' , 
+    'case_image' , 
+    'identity_image' , 
+    'social_security' , 
+    'description'
+    ] ;
+
+    
+
+
+
+
 }
