@@ -42,7 +42,7 @@ class HelpController extends Controller
         $input = Validator::make($request->all(),
             [
                 'name' => 'required',
-                'Phone' => 'required',
+                'phone' => 'required',
                 'address' => 'required',
                 'case_image' => 'required',
                 'identity_image' => 'required',

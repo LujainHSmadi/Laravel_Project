@@ -171,4 +171,9 @@ class AdminController extends Controller
             return redirect('login');
         }
     }
+
+
+    public function viewDash(){
+        return view('admin.adminPages.index');
+    }
 }

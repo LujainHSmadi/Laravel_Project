@@ -60,8 +60,8 @@
                      <th>Phone</th>
                      <th>address</th>
                      <th>description</th>
-                     <th style="width: 350px">Actions</th>
-                     <th>Status</th>
+                     <th style="width: 350px">Status</th>
+                     <th >Actions</th>
 
 
                    </tr>
@@ -78,7 +78,22 @@
                         <td>{{$item->Phone}}</td>
                         <td>{{$item->address}}</td>
                         <td>{{$item->description}}</td>
-                        <td >
+                        
+                        <td class = "row">
+                           <form action="{{route('toggle',$item->id)}}" method="POST">
+                            @csrf
+                            {{-- @method('PUT') --}}
+                            <div class="col-lg-1">
+                              <input type="checkbox" name='status'>
+                               <button type="submit" class="btn btn-danger">Update</button>
+                            </div>
+                            
+                          </form>
+
+
+  
+                        </td>
+<td >
                             <div class = "row">
 
                             <div class="col-lg-1" >
@@ -91,22 +106,6 @@
 
                             </div>
                         </td>
-                        <td>
-                           <form action="{{route('toggle',$item->id)}}" method="POST">
-                            @csrf
-                            {{-- @method('PUT') --}}
-                            <input type="checkbox" name='status'  >
-                            <br>
-                        <label class="switch">
-                         <button type="submit">button</button> 
-                          <span class="slider round" ></span>
-                        </label>
-                          </form>
-
-
-  
-                        </td>
-
                    </tr>
                    @endforeach
 

@@ -20,7 +20,7 @@ use App\Http\Controllers\DonateController;
 |
  */
 
-Route::get('/', 'App\Http\Controllers\TemplateController@index');
+// Route::get('/', 'App\Http\Controllers\TemplateController@index');
 Route::get('/about', 'App\Http\Controllers\TemplateController@about');
 Route::get('/services', 'App\Http\Controllers\TemplateController@services');
 Route::get('/contact', 'App\Http\Controllers\TemplateController@contact');
@@ -43,3 +43,5 @@ Route::get('adminLogin', 'App\Http\Controllers\AdminController@login');
 Route::get('/login', 'App\Http\Controllers\AdminController@authLogin')->name('login-auth');
 Route::get('/loginout', 'App\Http\Controllers\AdminController@logout')->name('logout');
 Route::post('/toggle/{id}', 'App\Http\Controllers\HelpController@toggle')->name('toggle');
+
+Route::get('dash', 'App\Http\Controllers\AdminController@viewDash');

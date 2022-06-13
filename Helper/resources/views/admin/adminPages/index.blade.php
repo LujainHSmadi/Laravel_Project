@@ -2,7 +2,20 @@
 
 @section('content')
 
+@php
+use App\Models\register;
+use App\Models\Help;
+use App\Models\volenteer;
+use App\Models\Admin;
 
+ $user = register::all()->count();
+ $case = Help::all()->count();
+ $volunteer = volenteer::all()->count();
+ $admin = Admin::all()->count();
+//  $cases = Help::all();
+ $cases = DB::table('helps')->orderBy('id','desc')->Paginate(10);
+  $i=0;
+@endphp
 
 <div class="clearfix"></div>
 
@@ -16,7 +29,7 @@
         <div class="row row-group m-0">
             <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
+                  <h5 class="text-white mb-0">{{$user}} <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
@@ -25,7 +38,7 @@
             </div>
             <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>
+                  <h5 class="text-white mb-0">{{$case}} <span class="float-right"><i class="fa fa-usd"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
@@ -34,7 +47,7 @@
             </div>
             <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">6200 <span class="float-right"><i class="fa fa-eye"></i></span></h5>
+                  <h5 class="text-white mb-0">{{$volunteer}} <span class="float-right"><i class="fa fa-eye"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
@@ -43,7 +56,7 @@
             </div>
             <div class="col-12 col-lg-6 col-xl-3 border-light">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">5630 <span class="float-right"><i class="fa fa-envira"></i></span></h5>
+                  <h5 class="text-white mb-0">{{$admin}} <span class="float-right"><i class="fa fa-envira"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
@@ -59,7 +72,7 @@
 	<div class="row">
 	 <div class="col-12 col-lg-12">
 	   <div class="card">
-	     <div class="card-header">Recent Cases Done
+	     <div class="card-header">Recent Cases 
 		  <div class="card-action">
              <div class="dropdown">
              <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
@@ -79,84 +92,41 @@
                  <table class="table align-items-center table-flush table-borderless">
                   <thead>
                    <tr>
-                     <th>Product</th>
-                     <th>Photo</th>
-                     <th>Product ID</th>
-                     <th>Amount</th>
-                     <th>Date</th>
-                     <th>Shipping</th>
+                     <th>No.</th>
+                     <th>Name</th>
+                     <th>phone</th>
+                     <th>address</th>
+                     <th>status</th>
+                     <th>social_security</th>
                    </tr>
                    </thead>
-                   <tbody><tr>
-                    <td>Iphone 5</td>
-                    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-                    <td>#9405822</td>
-                    <td>$ 1250.00</td>
-                    <td>03 Aug 2017</td>
-					<td><div class="progress shadow" style="height: 3px;">
-                          <div class="progress-bar" role="progressbar" style="width: 90%"></div>
-                        </div></td>
+                   <tbody>
+                    @foreach($cases as $case)
+                    <tr>
+                    <td>{{++$i}}</td>
+                    <td>{{$case->name}}</td>
+                    <td>{{$case->phone}}</td>
+                    <td>{{$case->address}}</td>
+                    @if($case->status == 1)
+                      <td> Done </td> 
+                        
+                    @else
+                        
+                   
+                      <td> In Progress </td>
+                    @endif                    
+                    <td>{{$case->social_security}}</td>
                    </tr>
-
-                   <tr>
-                    <td>Earphone GL</td>
-                    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-                    <td>#9405820</td>
-                    <td>$ 1500.00</td>
-                    <td>03 Aug 2017</td>
-					<td><div class="progress shadow" style="height: 3px;">
-                          <div class="progress-bar" role="progressbar" style="width: 60%"></div>
-                        </div></td>
-                   </tr>
-
-                   <tr>
-                    <td>HD Hand Camera</td>
-                    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-                    <td>#9405830</td>
-                    <td>$ 1400.00</td>
-                    <td>03 Aug 2017</td>
-					<td><div class="progress shadow" style="height: 3px;">
-                          <div class="progress-bar" role="progressbar" style="width: 70%"></div>
-                        </div></td>
-                   </tr>
-
-                   <tr>
-                    <td>Clasic Shoes</td>
-                    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-                    <td>#9405825</td>
-                    <td>$ 1200.00</td>
-                    <td>03 Aug 2017</td>
-					<td><div class="progress shadow" style="height: 3px;">
-                          <div class="progress-bar" role="progressbar" style="width: 100%"></div>
-                        </div></td>
-                   </tr>
-
-                   <tr>
-                    <td>Hand Watch</td>
-                    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-                    <td>#9405840</td>
-                    <td>$ 1800.00</td>
-                    <td>03 Aug 2017</td>
-					<td><div class="progress shadow" style="height: 3px;">
-                          <div class="progress-bar" role="progressbar" style="width: 40%"></div>
-                        </div></td>
-                   </tr>
-
-				   <tr>
-                    <td>Clasic Shoes</td>
-                    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-                    <td>#9405825</td>
-                    <td>$ 1200.00</td>
-                    <td>03 Aug 2017</td>
-					<td><div class="progress shadow" style="height: 3px;">
-                          <div class="progress-bar" role="progressbar" style="width: 100%"></div>
-                        </div></td>
-                   </tr>
+                   @endforeach
 
                  </tbody></table>
                </div>
-	   </div>
-	 </div>
+               
+              </div>
+              <div class="pagination-wrapper ml-3">
+               {{ $cases->links('pagination::bootstrap-4')}}
+             </div>
+            </div>
 	</div><!--End Row-->
 
       <!--End Dashboard Content-->
@@ -171,7 +141,5 @@
     </div><!--End content-wrapper-->
    <!--Start Back To Top Button-->
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-
-
 
 @endsection
