@@ -15,6 +15,7 @@ class Help extends Model
     'case_image' , 
     'identity_image' , 
     'social_security' , 
+    'status' , 
     'description'
     ] ;
 

@@ -21,6 +21,7 @@ class CreateHelpsTable extends Migration
             $table->text('case_image');
             $table->text('identity_image');
             $table->integer('social_security');
+            $table->boolean('status')->default(0);
             $table->text('description');
             $table->timestamps();
         });

@@ -26,6 +26,9 @@
   <link href="/assets/css/sidebar-menu.css" rel="stylesheet"/>
   <!-- Custom Style-->
   <link href="/assets/css/app-style.css" rel="stylesheet"/>
+  <link href="/assets/css/toggle.css" rel="stylesheet"/>
+  
+
 
 </head>
 
@@ -98,7 +101,7 @@
 
     <li class="nav-item">
       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-        <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
+        <span class="user-profile"><img src="https://images.pexels.com/photos/9830120/pexels-photo-9830120.jpeg?cs=srgb&dl=pexels-ron-lach-9830120.jpg&fm=jpg" class="img-circle" alt="user avatar"></span>
       </a>
       <ul class="dropdown-menu dropdown-menu-right">
        <li class="dropdown-item user-details">

@@ -48,6 +48,7 @@ class HelpController extends Controller
                 'identity_image' => 'required',
                 'social_security' => 'required',
                 'description' => 'required',
+                'status' => 'required',
 
             ]
         )->validate();
@@ -122,6 +123,7 @@ class HelpController extends Controller
         $cases->case_image = $request->input('case_image');
         $cases->identity_image = $request->input('identity_image');
         $cases->social_security = $request->input('social_security');
+        $cases->status = $request->input('status');
         $cases->description = $request->input('description');
 
         $cases->save();
@@ -155,4 +157,14 @@ class HelpController extends Controller
             return view('admin.adminpages.login');
         }
     }
+    public function toggle($id)
+    {
+        $cases = new Help;
+        $cases->where('id', $id)->update(['status' => request('status') == 'on' ? 1:0]);
+        
+        return redirect()->route('casesinfo')
+            ->with('message', 'User has been approved successfully');
+
+    }
+
 }

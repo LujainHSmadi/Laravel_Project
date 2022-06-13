@@ -60,9 +60,9 @@
                      <th>Phone</th>
                      <th>address</th>
                      <th>description</th>
+                     <th style="width: 350px">Actions</th>
                      <th>Status</th>
 
-                     <th style="width: 350px">Actions</th>
 
                    </tr>
                    </thead>
@@ -88,7 +88,23 @@
                                     <button type="submit" class="btn btn-danger  px-4">delete</button>
                                     </form>
                             </div>
+
                             </div>
+                        </td>
+                        <td>
+                           <form action="{{route('toggle',$item->id)}}" method="POST">
+                            @csrf
+                            {{-- @method('PUT') --}}
+                            <input type="checkbox" name='status'  >
+                            <br>
+                        <label class="switch">
+                         <button type="submit">button</button> 
+                          <span class="slider round" ></span>
+                        </label>
+                          </form>
+
+
+  
                         </td>
 
                    </tr>
