@@ -61,7 +61,6 @@ class AdminController extends Controller
         } else {
             return view('admin.adminpages.login');
         }
-       
 
     }
 
@@ -133,26 +132,30 @@ class AdminController extends Controller
     public function login()
     {
         if (Session::has('loginId')) {
-        return view('admin.adminpages.login');
-          } else {
+            return view('admin.adminpages.login');
+        } else {
             return view('admin.adminpages.login');
         }
     }
     public function authLogin(Request $request)
     {
-        
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
         $admin = Admin::where('email', '=', $request->email)->first();
         if ($admin) {
+
             if (Hash::check($request->password, $admin->password)) {
+
+                //for navbar
                 $name = $request->session()->put('name', $admin->name);
                 $email = $request->session()->put('email', $admin->email);
-
+                //for login
                 $request->session()->put('loginId', $admin->id);
                 return redirect('/admin');
+
             } else {
                 return back()->with('fail', 'Password not matches');
             }
@@ -161,8 +164,9 @@ class AdminController extends Controller
         }
     }
 
-    public function logout(){
-        if(Session::has('loginId')){
+    public function logout()
+    {
+        if (Session::has('loginId')) {
             Session::pull('loginId');
             return redirect('login');
         }
