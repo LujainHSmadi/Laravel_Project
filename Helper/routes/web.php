@@ -8,6 +8,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\VolenteerController;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\DonateController;
+use App\Http\Controllers\ContactController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,7 @@ Route::resource('users', RegisterController::class);
 Route::resource('volenteers', VolenteerController::class);
 Route::resource('home', HelpController::class);
 Route::resource('donate', DonateController::class);
+Route::resource('contact', ContactController::class);
 
 Route::get('don', [DonateController::class, 'create']);
 Route::get('/profile/{id}', 'App\Http\Controllers\RegisterController@profileShow')->name('profile');
