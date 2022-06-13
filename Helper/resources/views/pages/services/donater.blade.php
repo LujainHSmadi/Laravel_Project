@@ -15,12 +15,6 @@
   <body>
     <div>
 
-    {{-- @if (session::has('status'))
-    <div class="alert alert-success">
-        {{ session::get('status') }}
-    </div>
-@endif --}}
-
         <form action="{{route('donate.store')}}" method="post">
           @csrf
             <div class="container">
@@ -66,16 +60,16 @@
                        <table>
 
                         <td> 
-                          <label><input type="checkbox" name="tools" value="Red"> paint</label> <br> 
-                         <label><input type="checkbox" name="tools" value="Blue"> Bricks</label><br>
-                         <label><input type="checkbox" name="tools" value="Green"> Grit</label><br>
+                          <label><input type="checkbox" name="tools" value="paint"> paint</label> <br> 
+                         <label><input type="checkbox" name="tools" value="Bricks"> Bricks</label><br>
+                         <label><input type="checkbox" name="tools" value="Grit"> Grit</label><br>
                         </td>
-                        <td> <label><input type="checkbox" name="tools" value="Yellow"> Rebar</label>
-                         <label><input type="checkbox" name="tools" value="Yellow"> Cement</label>
-                         <label><input type="checkbox" name="tools" value="Yellow"> Electrical wires</label>
+                        <td> <label><input type="checkbox" name="tools" value="Rebar"> Rebar</label>
+                         <label><input type="checkbox" name="tools" value="Cement"> Cement</label>
+                         <label><input type="checkbox" name="tools" value="Electrical wires"> Electrical wires</label>
                          <td>
-                         <label><input type="checkbox" name="tools" value="Yellow">Doord</label>
-                         <label><input type="checkbox" name="tools" value="Yellow">Windows</label>
+                         <label><input type="checkbox" name="tools" value="Doors">Doors</label>
+                         <label><input type="checkbox" name="tools" value="Windows">Windows</label>
                        </table>
                    </div>
                     <input id="" class="btn btn-outline-light botton" type="submit" name="create" value="submit">
