@@ -58,16 +58,25 @@
                     <input class="form-control" type="text" name="address" placeholder="Address" required>
                 
 
-                   <label for="location"> Address: </label>
-                   <input class="form-control" type="text" name="tools" placeholder="Address" required>
+                  
 
                     <hr class="mb-3">
-                      <div  class="form-group row gap-3"> 
+                      <div  class="form-group  "> 
                        <label ><strong>Tools :</strong></label><br>
-                       <label><input type="checkbox" name="tools" value="Red"> Red</label> <br> 
-                       <label><input type="checkbox" name="tools" value="Blue"> Blue</label><br>
-                        <label><input type="checkbox" name="tools" value="Green"> Green</label><br>
-                        <label><input type="checkbox" name="tools" value="Yellow"> Yellow</label>
+                       <table>
+
+                        <td> 
+                          <label><input type="checkbox" name="tools" value="Red"> paint</label> <br> 
+                         <label><input type="checkbox" name="tools" value="Blue"> Bricks</label><br>
+                         <label><input type="checkbox" name="tools" value="Green"> Grit</label><br>
+                        </td>
+                        <td> <label><input type="checkbox" name="tools" value="Yellow"> Rebar</label>
+                         <label><input type="checkbox" name="tools" value="Yellow"> Cement</label>
+                         <label><input type="checkbox" name="tools" value="Yellow"> Electrical wires</label>
+                         <td>
+                         <label><input type="checkbox" name="tools" value="Yellow">Doord</label>
+                         <label><input type="checkbox" name="tools" value="Yellow">Windows</label>
+                       </table>
                    </div>
                     <input id="" class="btn btn-outline-light botton" type="submit" name="create" value="submit">
                     <a style="margin-top: 10px" class="btn btn-outline-light botton" href="/services">Back</a>

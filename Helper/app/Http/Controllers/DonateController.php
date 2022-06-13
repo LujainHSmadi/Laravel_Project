@@ -31,6 +31,7 @@ class DonateController extends Controller
      */
     public function create()
     {
+return view('pages.services.donater');
 
     }
 
@@ -42,28 +43,27 @@ class DonateController extends Controller
      */
     public function store(Request $request)
     {
-        if (Session::has('loginId')) {
-            $this->validate($request, [
-                'name' => 'required',
-                'email' => 'required',
-                'number' => 'required',
-                'address' => 'required',
-                'tool' => 'required',
-            ]);
+        $validate = $request->validate([
+    'name' => 'required|unique:registers|max:255',
+    'email' => 'required|unique:registers|email',
+    'number' => 'required',
+    'address' => 'required',
+    'tools' => 'required',
 
-            $donate = new Donate();
-            $donate->name = $request->input('name');
-            $donate->email = $request->input('email');
-            $donate->number = $request->input('number');
-            $donate->address = $request->input('address');
-            $donate->tool = $request->input('tool');
-            $donate->save();
-            return redirect('/donate')->with('success', 'Donate Edited');
+]);
+if ($request == true) {
+    $donate = new donate;
+    $donate->name = $request->input('name');
+    $donate->email = $request->input('email');
+    $donate->number = $request->input('number');
+    $donate->address = $request->input('address');
+    $donate->tools = $request->input(['tools']);
+    $donate->save();
+    return redirect('/don')
+        ->with(('status' . 'Your informasion submited successfully'));}
 
-        }
-     else {
-            return view('admin.adminpages.login');
-        }
+        
+    
     }
 
     /**
