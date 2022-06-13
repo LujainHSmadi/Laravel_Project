@@ -11,17 +11,17 @@
       {{-- <!--<link rel="stylesheet" href="css/ceate.css">--> --}}
   </head>
   <body>
-      
+
     <!-- Optional JavaScript -->
     <div>
-        <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('home.store')}}" method="POST" enctype="multipart/form-data">
             <div class="container">
 @csrf
                 <div class="row"></div>
 
                 <div class="col-xs-3" id="forms">
                     <h1 style="font-size: 75px;"> Helper.</h1>
-                   
+
                     <h1> To help you , Fill The Form </h1>
 
                     <hr class="mb-3">
@@ -29,13 +29,13 @@
                     <input class="form-control" type="text" name="name" placeholder="Enter Your Name" required>
 
                     <label for="email"> Phone Number </label>
-                    <input class="form-control" type="text" name="phone" placeholder="Enter Phone Number" required>
-                    
-                
+                    <input class="form-control" type="text" name="Phone" placeholder="Enter Phone Number" required>
+
+
                     <label for="password"> Adress</label>
                     <input class="form-control" type="text" name="address" placeholder="Your Adress" required>
 
-                    
+
                     <label for="re-pass">The Case </label>
                     <input class="form-control" type="file" name="case_image" placeholder="Your Case Image" required>
 
@@ -49,6 +49,7 @@
 
                     <label for="location"> Description </label>
                     <input class="form-control" type="text" name="description" placeholder="Descripe Your Case" required>
+                    <input class="form-control" type="hidden" name="status" value="0">
 
 
 
@@ -56,21 +57,18 @@
 
 
                     <hr class="mb-3">
-                 
+
                     <input id="botton" class="" type="submit" value="Send">
 
                 </div>
             </div>
     </div>
-    
+
 
 
 
     </form>
    </div>
-
-
-
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\volenteer;
 use Illuminate\Http\Request;
+use Session;
 
 class VolenteerController extends Controller
 {
@@ -14,8 +15,8 @@ class VolenteerController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $volenteers = Volenteer::all();
+        return view('pages.services.volenteers', compact('volenteers'));}
 
     /**
      * Show the form for creating a new resource.
@@ -24,8 +25,7 @@ class VolenteerController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view('pages.services.volenteers');}
 
     /**
      * Store a newly created resource in storage.
@@ -35,8 +35,29 @@ class VolenteerController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validate = $request->validate([
+            'name' => 'required|unique:registers|max:255',
+            'email' => 'required|unique:registers|email',
+            'career' => 'required',
+            'address' => 'required',
+            'number' => 'required',
+            'age' => 'required',
+
+        ]);
+
+        if ($request == true) {
+            $volunteer = new volenteer;
+            $volunteer->name = $request->input('name');
+            $volunteer->email = $request->input('email');
+            $volunteer->age = $request->input('age');
+            $volunteer->number = $request->input('number');
+            $volunteer->address = $request->input('address');
+            $volunteer->career = $request->input('career');
+
+            $volunteer->save();
+
+            return redirect('/volenteers')
+                ->with('success', 'Your informasion submited successfully');}}
 
     /**
      * Display the specified resource.
@@ -78,8 +99,28 @@ class VolenteerController extends Controller
      * @param  \App\Models\volenteer  $volenteer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(volenteer $volenteer)
+    public function destroy($id)
     {
-        //
+        if (Session::has('loginId')) {
+            $volenteers = volenteer::find($id);
+            $volenteers->delete();
+            return redirect('/volenteersinfo');
+
+        } else {
+            return view('admin.adminpages.login');
+        }
+
+    }
+
+    public function volenteersInfo()
+    {
+        if (Session::has('loginId')) {
+            $volenteers = Volenteer::all();
+            return view('admin.volenteers.index')->with('volenteers', $volenteers);
+
+        } else {
+            return view('admin.adminpages.login');
+        }
+
     }
 }

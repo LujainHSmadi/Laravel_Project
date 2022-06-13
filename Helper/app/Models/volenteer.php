@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class volenteer extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name , email , age, number, address, career'];
 }

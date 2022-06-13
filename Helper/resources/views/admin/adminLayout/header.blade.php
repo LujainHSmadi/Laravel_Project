@@ -57,12 +57,12 @@
       </li>
 
       <li>
-        <a href="/cases">
+        <a href="/volenteersinfo">
           <i class="zmdi zmdi-slideshare"></i> <span>Volnteer</span>
         </a>
       </li>
       <li>
-        <a href="/doners">
+        <a href="/casesinfo">
           <i class="zmdi zmdi-format-list-bulleted"></i> <span>Cases</span>
         </a>
       </li>

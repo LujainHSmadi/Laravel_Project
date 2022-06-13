@@ -1,0 +1,70 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+body{
+
+    background-image: url("../public/images/sasa.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.container{
+    background-color: #11268400;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+   max-width:  60%;
+   margin: 50px 50px 50px ;
+   /* float: left; */
+   color: rgba(255, 255, 255, 0.696);
+}
+
+#forms{
+width: 70%;
+/* background-color: rgba(240, 255, 240, 0.329);
+padding: 30px;
+border-radius: 30px; */
+
+}
+
+.form-control{
+
+    border: 0ch;
+    background-color: #ffffffaa;
+}
+
+
+.botton{
+  width:  100%;
+
+}
+
+ #btn{
+
+ text-decoration: none;
+ }
+
+
+@media screen and (min-width: 480px) and ( max-width: 768px) {
+
+    #forms{
+        width: 100%;
+
+        }
+}
+
+
+
+@media screen and (min-width: 0px) and ( max-width: 480px) {
+
+
+.container{
+    width: 100%;
+    float: none;
+}
+
+}

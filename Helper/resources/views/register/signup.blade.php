@@ -10,15 +10,12 @@
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="register/css/style.css">
-    <style>
-     
+    <link rel="stylesheet" href="/register/css/style.css">
 
-    </style>
 </head>
 <body>
 
-    
+
     <div class="main">
 
         <!-- Sign up form -->
@@ -36,7 +33,7 @@
                             {{ $message }}
                         </div>
                         @endif
-                        <form method="post" class="register-form" id="register-form" action="signup">
+                        <form method="post" class="register-form" id="register-form" action="{{route('users.store')}}">
                             @csrf
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -56,29 +53,29 @@
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="pass" placeholder="Password"/>
                             </div>
-                            @error('pass')
+                            @error('password')
                             <div class="alert alert-danger mt-1 mb-1" style="color:red">{{ $message }}</div>
                                @enderror
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password"  id="re_pass" placeholder="Repeat your password"/>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
                             </div>
-                            
-                        
+
+
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                             </div>
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="register/images/n.png" alt="sing up image" style=""></figure>
-                        <a href="/login" class="signup-image-link">I am already member !!</a>
+                        <figure><img src="/register/images/n.png" alt="sing up image" style=""></figure>
+                        <a href="/userform" class="signup-image-link">I am already member !!</a>
                     </div>
                 </div>
             </div>
         </section>
 
-       
+
 
     </div>
 

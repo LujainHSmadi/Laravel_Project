@@ -57,8 +57,11 @@
                    <tr>
                      <th>NUM</th>
                      <th>Name</th>
-                     <th>Email</th>
-                     <th>Password</th>
+                     <th>Phone</th>
+                     <th>address</th>
+                     <th>description</th>
+                     <th>Status</th>
+
                      <th style="width: 350px">Actions</th>
 
                    </tr>
@@ -67,18 +70,19 @@
                     @php
                     $i = 1;
                    @endphp
-                   @foreach ($users as $item)
+                   @foreach ($cases as $item)
                     <tr>
 
                         <th>{{$i++}}</th>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->email}}</td>
-                        <td>{{$item->password}}</td>
+                        <td>{{$item->Phone}}</td>
+                        <td>{{$item->address}}</td>
+                        <td>{{$item->description}}</td>
                         <td >
                             <div class = "row">
-                          
+
                             <div class="col-lg-1" >
-                                    <form action="{{route('users.destroy', $item->id)}}" method="POST">
+                                    <form action="{{route('home.destroy', $item->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                     <button type="submit" class="btn btn-danger  px-4">delete</button>
@@ -111,4 +115,3 @@
     <!--End Back To Top Button-->
 
 @endsection
-

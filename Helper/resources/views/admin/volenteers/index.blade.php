@@ -1,4 +1,3 @@
-
 @extends('admin.adminLayout.adminMaster')
 
 @section('content')
@@ -58,7 +57,10 @@
                      <th>NUM</th>
                      <th>Name</th>
                      <th>Email</th>
-                     <th>Password</th>
+                     <th>age</th>
+                     <th>number</th>
+                     <th>address</th>
+                     <th>career</th>
                      <th style="width: 350px">Actions</th>
 
                    </tr>
@@ -67,18 +69,21 @@
                     @php
                     $i = 1;
                    @endphp
-                   @foreach ($users as $item)
+                   @foreach ($volenteers as $item)
                     <tr>
 
                         <th>{{$i++}}</th>
                         <td>{{$item->name}}</td>
                         <td>{{$item->email}}</td>
-                        <td>{{$item->password}}</td>
+                        <td>{{$item->age}}</td>
+                        <td>{{$item->number}}</td>
+                        <td>{{$item->address}}</td>
+                        <td>{{$item->career}}</td>
                         <td >
                             <div class = "row">
-                          
+
                             <div class="col-lg-1" >
-                                    <form action="{{route('users.destroy', $item->id)}}" method="POST">
+                                    <form action="{{route('volenteers.destroy', $item->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                     <button type="submit" class="btn btn-danger  px-4">delete</button>
@@ -111,4 +116,3 @@
     <!--End Back To Top Button-->
 
 @endsection
-

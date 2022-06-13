@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    
+
 
       <section class="parallax-container" data-parallax-img="images/bg-breadcrumbs-about.jpg">
         <div class="parallax-content breadcrumbs-custom context-dark">

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    
+
     <div class="main">
 
         <!-- Sign up form -->
@@ -24,19 +24,19 @@
                     <div class="signup-form">
                         <h2 class="form-title">Log In</h2>
 
-                        <form method="post" class="register-form" id="register-form" action="login">
+                        <form method="post" class="register-form" id="register-form" action="{{route('userlogin')}}">
                             @csrf
-                   
+
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email"/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input type="password" name="password" id="pass" placeholder="Password"/>
                             </div>
-                     
-                        
+
+
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="submit"/>
                             </div>
@@ -44,13 +44,13 @@
                     </div>
                     <div class="signup-image">
                         <figure><img src="register/images/n.png" alt="sing up image"></figure>
-                        <a href="/signup" class="signup-image-link">Don't have account? Register</a>
+                        <a href="/users/create" class="signup-image-link">Don't have account? Register</a>
                     </div>
                 </div>
             </div>
         </section>
 
-       
+
 
     </div>
 

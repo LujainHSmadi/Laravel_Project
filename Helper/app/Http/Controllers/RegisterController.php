@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Register;
+use App\Models\Admin;
+use App\Models\register;
+use Hash;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -13,64 +15,16 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function data(Request $request)
+    public function index()
     {
-
-        $validate = $request->validate([
-            'name' => 'required|unique:registers|max:255',
-            'email' => 'required|unique:registers|email',
-            'password' => 'required|max:25|min:8|'
-
-        ]);
-     
-    
-    
-         if($request->pass !== $request->re_pass){
-             
-           return redirect('signup')->with('failure','password does not match');
-                 }else{
-            $data=new Register;
-        $data->name=$request->name;
-        $data->email=$request->email;
-        $password = $request->pass;
-        $hashed = Hash::make($password);
-        $data->password =$hashed;
-        $data->save();
-           return redirect('/login');
+        if (Session::has('loginId')) {
+            $users = register::all();
+            return view('admin.users.usersInfo', compact('users'));
+        } else {
+            return view('admin.adminpages.login');
         }
-        
-      
-
-        $users = Register::all();
-
-        return view('admin.adminPages.usersInfo', compact('users'));
 
     }
-
-
-    public function user(Request $request){
-    
-        $email=$request->email;
-        $password=$request->pass;
-        $user= Register::where('email',$email)->first();
-        
-        if(isset($user)){
-        
-        if(Hash::check($password,$user->password)==true){
-        
-            $request->session()->put('email',$user['email']);
-            return redirect('home');
-        }
-        else
-        {
-            return redirect('login')->with('incorrect_password' , 'Password Incorrect');
-        }
-
-       }else
-       {
-           return "Email Does not Exist"; 
-       }
-     }
 
     /**
      * Show the form for creating a new resource.
@@ -79,7 +33,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //
+        return view('register.signup');
     }
 
     /**
@@ -91,53 +45,138 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         //
+        $validate = $request->validate([
+            'name' => 'required|unique:registers|max:255',
+            'email' => 'required|unique:registers|email',
+            'password' => 'required|max:25|min:8|',
+
+        ]);
+
+        //  if($request->pass !== $request->re_pass){
+
+        //    return redirect('users/create')->with('failure','password does not match');
+        //          }else{
+        $users = new register;
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $password = $request->pass;
+        $hashed = Hash::make($password);
+        $users->password = $hashed;
+        $users->save();
+        return redirect('/userform');
+        // }
     }
-
-
-    
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Register  $register
+     * @param  \App\Models\register  $register
      * @return \Illuminate\Http\Response
      */
-    public function show(Register $register)
+    public function show($id)
     {
-        //
+        $users = register::find($id);
+        return view('register.profile', ['item' => $users]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Register  $register
+     * @param  \App\Models\register  $register
      * @return \Illuminate\Http\Response
      */
-    public function edit(Register $register)
+    public function edit($id)
     {
-        //
+        $item = register::find($id);
+        return view('register.profile', compact('item'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Register  $register
+     * @param  \App\Models\register  $register
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Register $register)
+    public function update(Request $request, $id)
     {
-        //
+        $users = register::findorFail($id);
+
+        //  if($request->pass !== $request->re_pass){
+
+        //    return redirect('users/create')->with('failure','password does not match');
+        //          }else{
+        $users = new register;
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+        $users->password = $request->input('password');
+        $users->save();
+
+        if (Admin::findorFail(Session::get('id'))) {
+            return redirect('/users/' . $users->id);
+        }
+        return redirect('/profile/' . $users->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Register  $register
+     * @param  \App\Models\register  $register
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Register $register)
+
+    public function destroy(register $users, $id)
     {
-        //
+        if (Session::has('loginId')) {
+            $users = register::find($id);
+            $users->delete();
+            return redirect('/users');
+
+        } else {
+            return view('admin.adminpages.login');
+        }
+
     }
+
+//     public function destroy(register $register, $id)
+    //     {
+    //         $users = register::find($id);
+    //         $users->delete();
+    //         return redirect('/users');
+    //    }
+
+    public function profileShow($id)
+    {$users = register::find($id);
+        return view('register.profile')->with('users', $users);
+
+    }
+
+    public function loginForm()
+    {
+        return view('register.login');
+    }
+
+    public function userlogin(Request $request)
+    {
+
+        $email = $request->email;
+        $password = $request->pass;
+        $users = register::where('email', $email)->first();
+
+        if (isset($users)) {
+
+            if (Hash::check($password, $users->password) == true) {
+
+                $request->session()->put('email', $users['email']);
+                return redirect('profile/' . $users->id);
+            } else {
+                return redirect('login')->with('incorrect_password', 'Password Incorrect');
+            }
+
+        } else {
+            return "Email Does not Exist";
+        }
+    }
+
 }

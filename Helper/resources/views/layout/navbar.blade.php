@@ -47,16 +47,16 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/services">Services</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="/contact">Contacts</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/contact">Contact us</a>
                       </li>
                     </ul>
                     {{-- <a class="button button-primary button-sm" href="#">Donate</a> --}}
                   </div>
-                  
+
                 </div>
-                
-                <a class="button button-primary button-sm " href="login">login</a>
-                
+
+                <a class="button button-primary button-sm " href="/userform">login</a>
+
               </div>
             </div>
           </nav>

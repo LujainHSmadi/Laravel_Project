@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    
+
       <section class="section section-lg section-main-bunner section-main-bunner-filter">
         <div class="main-bunner-img" style="background-image: url(&quot;images/bg-bunner-2.jpg&quot;); background-size: cover;"></div>
         <div class="main-bunner-inner">
@@ -22,12 +22,11 @@
             <div class="col-lg-6">
               <div class="box-img-animate">
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;: 0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-1.jpg" alt=""></div>
-                <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;: 150, &quot;x&quot;: 0,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-2(2).jpg"  width="271px" height="191px" alt=""></div>
-                <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:70, &quot;x&quot;: -250,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-3(2).jpg" width="271px" height="191px" alt=""></div>
+                <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;: 150, &quot;x&quot;: 0,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-2.jpg" alt=""></div>
+                <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:70, &quot;x&quot;: -250,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-3.jpg" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:20, &quot;x&quot;: 20,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-4.jpg" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:60, &quot;x&quot;: 70,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-5.jpg" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-6.jpg" alt=""></div>
-                <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:70, &quot;x&quot;: -250,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-3(4).jpg" width="271px" height="191px" alt=""></div>
               </div>
             </div>
             <div class="col-lg-6 col-xl-5">
@@ -39,8 +38,8 @@
                     <div class="box-icon-modern">
                       <div class="box-icon-inner decorate-triangle"><span class="icon-xl linearicons-baby2 icon-primary"></span></div>
                       <div class="box-icon-caption">
-                        <h4><a href="#">Saving families</a></h4>
-                        <p>Our main mission is to save and rescue families from living in not appropirate houses.</p>
+                        <h4><a href="#">Saving Children</a></h4>
+                        <p>Our main mission is to save and rescue permanently displaced children.</p>
                       </div>
                     </div>
                   </div>
@@ -49,7 +48,7 @@
                       <div class="box-icon-inner decorate-circle"><span class="icon-xl linearicons-sun icon-primary"></span></div>
                       <div class="box-icon-caption">
                         <h4><a href="#">Peace On The Planet</a></h4>
-                        <p>By working with our partners, we aim to establish peaceful around the world.</p>
+                        <p>By working with our partners, we aim to establish peaceful relationships.</p>
                       </div>
                     </div>
                   </div>
@@ -58,7 +57,7 @@
                       <div class="box-icon-inner decorate-rectangle"><span class="icon-xl linearicons-umbrella2 icon-primary"></span></div>
                       <div class="box-icon-caption">
                         <h4><a href="#">Care &amp; Protection</a></h4>
-                        <p>We provide global care and protection to support families all over the world.</p>
+                        <p>We provide global care and protection to support children all over the world.</p>
                       </div>
                     </div>
                   </div>
@@ -81,30 +80,34 @@
           <div class="row row-50">
  @php
     $i = 0 ;
-@endphp 
-            @foreach ($help as $item)
-  
-@if ($i++ < 3)
+@endphp
+            @foreach ($cases as $item)
+
+{{-- @if ($i++ < 3) --}}
+
+@if (!$item->status)
+
+
 
             <div class="col-md-6 col-lg-4 wow-outer">
               <div class="wow fadeInUp">
                 <article class="box-causes">
                   <div class="box-causes-img"><img src="{{url('public/images/'.$item->case_image)}}" alt="" width="372px"  style="height:396px;"/>
                     {{-- <a class="button button-sm button-primary" href="#">Donate</a> --}}
-                  
+
                   </div>
                   <h5 class="font-weight-medium">{{$item->description}}</h5>
                   <a class="button button-sm button-primary" href="#">Donate</a>
                   <a class="button button-sm button-primary" href="#">Volunteer</a>
-                
+
                 </article>
               </div>
             </div>
-            
 
 @endif
+{{-- @endif --}}
 
-@endforeach    
+@endforeach
 
           </div>
         </div>
@@ -124,11 +127,11 @@
                         {{-- <input class="form-input" id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required"> --}}
                         <label class="form-label" for="subscribe-form-email" ></label>
                       </div>
-                     
+
                     </form>
-                   
-                        <a class="button button-primary button-lg" href="{{route('create')}}" >Click Here</a>
-                      
+
+                        <a class="button button-primary button-lg" href="{{route('home.create')}}" >Click Here</a>
+
                   </div>
                 </div>
               </div>
@@ -136,4 +139,8 @@
           </div>
         </div>
       </section>
+
 @endsection
+
+  <script src="{{asset('js/core.min.js')}}"></script>
+      <script src="{{asset('js/script.js')}}"></script>
