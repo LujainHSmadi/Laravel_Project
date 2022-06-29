@@ -88,6 +88,7 @@ class AdminController extends Controller
     } else {
         return view('admin.adminpages.login');
     }
+
     }
 
     /**
@@ -168,7 +169,7 @@ class AdminController extends Controller
     {
         if (Session::has('loginId')) {
             Session::pull('loginId');
-            return redirect('login');
+            return redirect('loginad');
         }
     }
 
@@ -176,4 +177,6 @@ class AdminController extends Controller
     public function viewDash(){
         return view('admin.adminPages.index');
     }
+
+   
 }

@@ -104,7 +104,7 @@
           <div class="row no-gutters">
             <div class="col-md-6 col-lg-4">
               <div class="team-classic">
-                <div class="team-classic-figure"><img src="images/team-classic-1-390x252.jpg" alt="" width="390" height="252"/>
+                <div class="team-classic-figure"><img src="https://static.vecteezy.com/system/resources/previews/000/439/863/non_2x/vector-users-icon.jpg" alt="" width="390" height="252"/>
                   <ul class="team-classic-soc-list">
                     <li><a class="icon icon-md fa-facebook" href="#"></a></li>
                     <li><a class="icon icon-md fa-instagram" href="#"></a></li>
@@ -119,7 +119,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="team-classic">
-                <div class="team-classic-figure"><img src="images/team-classic-2-390x252.jpg" alt="" width="390" height="252"/>
+                <div class="team-classic-figure"><img src="https://static.vecteezy.com/system/resources/previews/000/439/863/non_2x/vector-users-icon.jpg" alt="" width="390" height="252"/>
                   <ul class="team-classic-soc-list">
                     <li><a class="icon icon-md fa-facebook" href="#"></a></li>
                     <li><a class="icon icon-md fa-instagram" href="#"></a></li>
@@ -134,7 +134,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="team-classic">
-                <div class="team-classic-figure"><img src="images/team-classic-3-390x252.jpg" alt="" width="390" height="252"/>
+                <div class="team-classic-figure"><img src="https://static.vecteezy.com/system/resources/previews/000/439/863/non_2x/vector-users-icon.jpg" alt="" width="390" height="252"/>
                   <ul class="team-classic-soc-list">
                     <li><a class="icon icon-md fa-facebook" href="#"></a></li>
                     <li><a class="icon icon-md fa-instagram" href="#"></a></li>
@@ -149,7 +149,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="team-classic">
-                <div class="team-classic-figure"><img src="images/team-classic-4-390x252.jpg" alt="" width="390" height="252"/>
+                <div class="team-classic-figure"><img src="https://static.vecteezy.com/system/resources/previews/000/439/863/non_2x/vector-users-icon.jpg" alt="" width="390" height="252"/>
                   <ul class="team-classic-soc-list">
                     <li><a class="icon icon-md fa-facebook" href="#"></a></li>
                     <li><a class="icon icon-md fa-instagram" href="#"></a></li>
@@ -164,7 +164,7 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="team-classic">
-                <div class="team-classic-figure"><img src="images/team-classic-5-390x252.jpg" alt="" width="390" height="252"/>
+                <div class="team-classic-figure"><img src="https://static.vecteezy.com/system/resources/previews/000/439/863/non_2x/vector-users-icon.jpg" alt="" width="390" height="252"/>
                   <ul class="team-classic-soc-list">
                     <li><a class="icon icon-md fa-facebook" href="#"></a></li>
                     <li><a class="icon icon-md fa-instagram" href="#"></a></li>

@@ -50,27 +50,21 @@
 
                     <label for="location"> Address: </label>
                     <input class="form-control" type="text" name="address" placeholder="Address" required>
-                
 
-                  
+
+
 
                     <hr class="mb-3">
-                      <div  class="form-group  "> 
+                      <div  class="form-group  ">
                        <label ><strong>Tools :</strong></label><br>
-                       <table>
-
-                        <td> 
-                          <label><input type="checkbox" name="tools" value="paint"> paint</label> <br> 
+                         <label><input type="checkbox" name="tools" value="paint"> paint</label> <br>
                          <label><input type="checkbox" name="tools" value="Bricks"> Bricks</label><br>
                          <label><input type="checkbox" name="tools" value="Grit"> Grit</label><br>
-                        </td>
-                        <td> <label><input type="checkbox" name="tools" value="Rebar"> Rebar</label>
+                         <label><input type="checkbox" name="tools" value="Rebar"> Rebar</label>
                          <label><input type="checkbox" name="tools" value="Cement"> Cement</label>
                          <label><input type="checkbox" name="tools" value="Electrical wires"> Electrical wires</label>
-                         <td>
                          <label><input type="checkbox" name="tools" value="Doors">Doors</label>
                          <label><input type="checkbox" name="tools" value="Windows">Windows</label>
-                       </table>
                    </div>
                     <input id="" class="btn btn-outline-light botton" type="submit" name="create" value="submit">
                     <a style="margin-top: 10px" class="btn btn-outline-light botton" href="/services">Back</a>

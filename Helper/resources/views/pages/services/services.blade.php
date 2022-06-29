@@ -21,7 +21,7 @@
 <section class="section section-lg bg-gray-1 ">
         <div class="container">
           <div class="row row-50">
-            <div class="col-lg-6 pr-xl-5"><img src="images/about-us-1-518x430.jpg" alt="" width="518" height="430"/>
+            <div class="col-lg-6 pr-xl-5"><img src="images/ser.jpg" alt="" width="518" height="430"/>
             </div>
             <div class="col-lg-6">
 

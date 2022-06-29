@@ -1,13 +1,14 @@
 *{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+
 }
 
 body{
-    /* background-image: url(images/bsbs.jpeg); */
+
+    background-image: url("../public/images/sasa.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: black;
+  
 }
 
 
@@ -30,7 +31,7 @@ width: 70%;
 }
 
 .form-control{
-    
+
     border: 0ch;
     background-color: #ffffff8f;
 }
@@ -38,7 +39,7 @@ width: 70%;
 
 #botton{
   width:  100%;
-   
+
 }
 
  #btn{
@@ -51,10 +52,10 @@ width: 70%;
 
     #forms{
         width: 100%;
-        
+
         }
 }
-         
+
 
 
 @media screen and (min-width: 0px) and ( max-width: 480px) {

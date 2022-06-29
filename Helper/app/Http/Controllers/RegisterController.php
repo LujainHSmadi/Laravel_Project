@@ -51,20 +51,10 @@ class RegisterController extends Controller
             'password' => 'required|max:25|min:8|',
 
         ]);
-
-        //  if($request->pass !== $request->re_pass){
-
-        //    return redirect('users/create')->with('failure','password does not match');
-        //          }else{
-        $users = new register;
-        $users->name = $request->name;
-        $users->email = $request->email;
-        $password = $request->pass;
-        $hashed = Hash::make($password);
-        $users->password = $hashed;
-        $users->save();
+        $data = $request->all();
+        $data['password'] = Hash::make($data['password']);
+        register::create($data);
         return redirect('/userform');
-        // }
     }
 
     /**
@@ -76,7 +66,7 @@ class RegisterController extends Controller
     public function show($id)
     {
         $users = register::find($id);
-        return view('register.profile', ['item' => $users]);
+        return view('/home');
 
     }
 
@@ -89,7 +79,7 @@ class RegisterController extends Controller
     public function edit($id)
     {
         $item = register::find($id);
-        return view('register.profile', compact('item'));
+        return view('/home');
     }
 
     /**
@@ -107,18 +97,17 @@ class RegisterController extends Controller
 
         //    return redirect('users/create')->with('failure','password does not match');
         //          }else{
-        $users = new register;
         $users->name = $request->input('name');
         $users->email = $request->input('email');
-        $users->password = $request->input('password');
-        $users->save();
-
+        
+        $users->save(); 
+        if(Session::has('id')){
         if (Admin::findorFail(Session::get('id'))) {
-            return redirect('/users/' . $users->id);
-        }
-        return redirect('/profile/' . $users->id);
+            return redirect('/home');
+        }}
+        return view('register.profile' , compact('users'));
+       
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -146,11 +135,7 @@ class RegisterController extends Controller
     //         return redirect('/users');
     //    }
 
-    public function profileShow($id)
-    {$users = register::find($id);
-        return view('register.profile')->with('users', $users);
 
-    }
 
     public function loginForm()
     {
@@ -166,10 +151,12 @@ class RegisterController extends Controller
 
         if (isset($users)) {
 
+
+
             if (Hash::check($password, $users->password) == true) {
 
                 $request->session()->put('email', $users['email']);
-                return redirect('profile/' . $users->id);
+                return redirect('/home');
             } else {
                 return redirect('login')->with('incorrect_password', 'Password Incorrect');
             }
@@ -177,6 +164,13 @@ class RegisterController extends Controller
         } else {
             return "Email Does not Exist";
         }
+    }
+
+    
+    public function profileShow($id)
+    {    $users = register::find($id);
+        return view('register.profile')->with('users',$users);
+ 
     }
 
 }

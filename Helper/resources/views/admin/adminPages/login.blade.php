@@ -20,7 +20,7 @@
   <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
   <!-- Custom Style-->
   <link href="assets/css/app-style.css" rel="stylesheet"/>
-  
+
 </head>
 
 <body class="bg-theme bg-theme1">
@@ -42,14 +42,14 @@
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
 		    <form action="{{route('login-auth')}}" method="get">
           @if (Session::has('success'))
-          
+
             <div class="alert alert-success">{{Session::get('Success')}}</div>
-          
+
           @endif
            @if (Session::has('fail'))
-          
+
             <div class="alert alert-danger">{{Session::get('fail')}}</div>
-          
+
           @endif
                 @csrf
 
@@ -78,25 +78,25 @@
 			 <div class="form-group col-6">
 			   <div class="icheck-material-white">
                 <input type="checkbox" id="user-checkbox" checked="" />
-                
+
 			  </div>
 			 </div>
-			
+
 			</div>
 			 <button type="submit" class="btn btn-light btn-block">Sign In</button>
-			 
+
 			</div>
-			 
+
 			 </form>
 		   </div>
 		  </div>
-		 
+
 	     </div>
-    
+
      <!--Start Back To Top Button-->
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
     <!--End Back To Top Button-->
-	
+
 	<!--start color switcher-->
    <div class="right-sidebar">
     <div class="switcher-icon">
@@ -106,7 +106,7 @@
 
       <p class="mb-0">Gaussion Texture</p>
       <hr>
-      
+
       <ul class="switcher">
         <li id="theme1"></li>
         <li id="theme2"></li>
@@ -118,24 +118,24 @@
 
       <p class="mb-0">Gradient Background</p>
       <hr>
-      
-      
+
+
      </div>
    </div>
   <!--end color switcher-->
-	
+
 	</div><!--wrapper-->
-	
+
   <!-- Bootstrap core JavaScript-->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
-	
+
   <!-- sidebar-menu js -->
   <script src="assets/js/sidebar-menu.js"></script>
-  
+
   <!-- Custom scripts -->
   <script src="assets/js/app-script.js"></script>
-  
+
 </body>
 </html>

@@ -439,7 +439,7 @@
 							}
 						} else {
 							if (output.hasClass("snackbars")) {
-								output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
+								output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-chat-outline  text-middle "></span><span> Message sent! </span></p>');
 							} else {
 								output.addClass("active error");
 							}

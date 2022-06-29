@@ -26,22 +26,22 @@
            </div>
            <div class="form-group">
                <label for="input-2">Email</label>
-               <input type="email" class="form-control" name="email" id="input-2" placeholder="Enter Your Email Address" {{$donate->email}}>
+               <input type="email" class="form-control" name="email" id="input-2" placeholder="Enter Your Email Address" value={{$donate->email}}>
             </div>
             <div class="form-group">
                 <label for="input-4">Number</label>
-                <input type="phone" class="form-control" name="number" id="input-4" placeholder="Enter Password" {{$donate->Password}}>
+                <input type="phone" class="form-control" name="number" id="input-4" value= {{$donate->number}}>
             </div>
             <div class="form-group">
              <label for="input-1">Address</label>
-             <input type="text" class="form-control" id="input-1" placeholder="Enter Your Address" name="address" {{$donate->address}}>
+             <input type="text" class="form-control" id="input-1" placeholder="Enter Your Address" name="address"value= {{$donate->address}}>
             </div>
             <div class="form-group">
              <label for="input-1">Tools</label>
              {{-- <input type="text" class="form-control" id="input-1" placeholder="Tools" name="tools"> --}}
  <div class="form-group">
                                 <label><strong>Tools :</strong></label><br>
-                                <label><input type="checkbox" name="tools[]" value="paint"> paint</label> <br> 
+                                <label><input type="checkbox" name="tools[]" value="paint"> paint</label> <br>
                          <label><input type="checkbox" name="tools[]" value="Bricks"> Bricks</label><br>
                          <label><input type="checkbox" name="tools[]" value="Grit"> Grit</label><br>
                          <label><input type="checkbox" name="tools[]" value="Rebar"> Rebar</label>
@@ -49,8 +49,8 @@
                          <label><input type="checkbox" name="tools[]" value="Electrical wires"> Electrical wires</label>
                          <label><input type="checkbox" name="tools[]" value="Doors">Doors</label>
                          <label><input type="checkbox" name="tools[]" value="Windows">Windows</label>
-                            </div>  
-             
+                            </div>
+
             </div>
 
            <div class="form-group">

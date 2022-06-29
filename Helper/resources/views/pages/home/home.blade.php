@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    
+
       <section class="section section-lg section-main-bunner section-main-bunner-filter">
         <div class="main-bunner-img" style="background-image: url(&quot;images/bg-bunner-2.jpg&quot;); background-size: cover;"></div>
         <div class="main-bunner-inner">
@@ -24,7 +24,6 @@
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;: 0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-1.jpg" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;: 150, &quot;x&quot;: 0,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-2(2).jpg"  width="271px" height="191px" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:70, &quot;x&quot;: -250,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-3(2).jpg" width="271px" height="191px" alt=""></div>
-                <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:20, &quot;x&quot;: 20,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-4.jpg" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:60, &quot;x&quot;: 70,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-5.jpg" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-6.jpg" alt=""></div>
                 <div class="box-img-animate-item" data-parallax-scroll="{&quot;y&quot;:70, &quot;x&quot;: -250,  &quot;smoothness&quot;: 50 }"><img src="images/animate-img-3(4).jpg" width="271px" height="191px" alt=""></div>
@@ -81,13 +80,13 @@
           <div class="row row-50">
  @php
     $i = 0 ;
-@endphp 
+@endphp
             @foreach ($cases as $item)
-  
+
 {{-- @if ($i++ < 3) --}}
 
 @if (!$item->status)
-    
+
 
 
             <div class="col-md-6 col-lg-4 wow-outer">
@@ -95,20 +94,20 @@
                 <article class="box-causes">
                   <div class="box-causes-img"><img src="{{url('public/images/'.$item->case_image)}}" alt="" width="372px"  style="height:396px;"/>
                     {{-- <a class="button button-sm button-primary" href="#">Donate</a> --}}
-                  
+
                   </div>
                   <h5 class="font-weight-medium">{{$item->description}}</h5>
-                  <a class="button button-sm button-primary" href="#">Donate</a>
-                  <a class="button button-sm button-primary" href="#">Volunteer</a>
-                
+                  {{-- <a class="button button-sm button-primary" href="/don">Donate</a>
+                  <a class="button button-sm button-primary" href="/volenteers">Volunteer</a> --}}
+
                 </article>
               </div>
             </div>
-            
+
 @endif
 {{-- @endif --}}
 
-@endforeach    
+@endforeach
 
           </div>
         </div>
@@ -118,7 +117,7 @@
       <section class="section section-lg bg-gray-1" >
         <div class="container">
           <div class="row justify-content-center text-center">
-           
+
 
       <h3 style="text-align: center"  > Successful Stories </h3>
      <p style="padding: 20px" style="font-size: 20pt">Here we show you some of our successful stories that ended with lots of family laughter and a happy, warm home. Here we show you part of what Helper does, and in the end this can't be done without you, so don't hesitate to be a part of Helper, part of people's laughter, their homes and their memories.</p>
@@ -149,10 +148,10 @@
       </div>
           </div>
         </div>
-        
+
       </section>
 
-     
+
 
 
 
@@ -173,11 +172,11 @@
                         {{-- <input class="form-input" id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required"> --}}
                         <label class="form-label" for="subscribe-form-email" ></label>
                       </div>
-                     
+
                     </form>
-                   
+
                         <a class="button button-primary button-lg" href="{{route('home.create')}}" >Click Here</a>
-                      
+
                   </div>
                 </div>
               </div>

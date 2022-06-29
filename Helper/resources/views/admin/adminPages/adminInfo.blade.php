@@ -63,7 +63,7 @@
                      <th>Create Date</th>
                      <th>Update Date</th>
                      <th>Edit</th>
-                     <th>Delete</th>
+                     {{-- <th>Delete</th> --}}
                    </tr>
                    </thead>
                    <tbody>
@@ -79,12 +79,13 @@
                     <td>{{$info->updated_at}}</td>
                     <td> <a href="admin/{{$info->id}}/edit" class="btn btn-primary">Edit</button></a></td>					
                     <td>
-                       <form action="{{ route('admin.destroy',$info->id )}}" method="post">
+
+                       {{-- <form action="{{ route('admin.destroy',$info->id )}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-      </td>					
+                      </form> --}}
+                   </td>					
                    </tr>
                     @endforeach
                    

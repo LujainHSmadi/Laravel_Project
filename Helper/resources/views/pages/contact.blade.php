@@ -24,7 +24,7 @@
               <div class="box-icon-classic">
                 <div class="box-icon-inner decorate-triangle decorate-color-secondary"><span class="icon-xl linearicons-phone-incoming icon-gradient-1"></span></div>
                 <div class="box-icon-caption">
-                  <h4><a href="tel:#">(+962) 775272717</a></h4>
+                  <h4><a href="tel:#">1-800-123-1234</a></h4>
                   <p>You can call us anytime</p>
                 </div>
               </div>
@@ -35,7 +35,7 @@
               <div class="box-icon-classic">
                 <div class="box-icon-inner decorate-circle decorate-color-secondary-2"><span class="icon-xl linearicons-map2 icon-gradient-2"></span></div>
                 <div class="box-icon-caption">
-                  <h4><a href="#">51 Irbid Street,  Jordan</a></h4>
+                  <h4><a href="#">51 Francis Street, Darlinghurst NSW 2010, United States</a></h4>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@
               <div class="box-icon-classic">
                 <div class="box-icon-inner decorate-rectangle decorate-color-primary"><span class="icon-xl linearicons-paper-plane icon-gradient-3"></span></div>
                 <div class="box-icon-caption">
-                  <h4><a href="mailto:#">info@helper.org</a></h4>
+                  <h4><a href="mailto:#">info@demolink.org</a></h4>
                   <p>Feel free to email us your questions</p>
                 </div>
               </div>
