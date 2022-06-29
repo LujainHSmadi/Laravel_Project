@@ -58,7 +58,7 @@
                      <th>NUM</th>
                      <th>Name</th>
                      <th>Email</th>
-                     <th>Password</th>
+                    
                      <th style="width: 350px">Actions</th>
 
                    </tr>
@@ -73,7 +73,7 @@
                         <th>{{$i++}}</th>
                         <td>{{$item->name}}</td>
                         <td>{{$item->email}}</td>
-                        <td>{{$item->password}}</td>
+                      
                         <td >
                             <div class = "row">
                           

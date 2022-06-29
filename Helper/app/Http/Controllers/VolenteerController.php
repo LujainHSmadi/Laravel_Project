@@ -56,7 +56,7 @@ class VolenteerController extends Controller
 
             $volunteer->save();
 
-            return redirect('/volenteers')
+            return redirect('/services')
                 ->with('success', 'Your informasion submited successfully');}}
 
     /**
@@ -121,6 +121,16 @@ class VolenteerController extends Controller
         } else {
             return view('admin.adminpages.login');
         }
+
+    }
+
+     public function volStatus($id)
+    {
+        $vol = new volenteer;
+        $vol->where('id', $id)->update(['status' => request('status') == 'Approved' ? 1:0]);
+        
+        return redirect()->route('volenteersinfo')
+            ->with('message', 'volenteer has been approved successfully');
 
     }
 }

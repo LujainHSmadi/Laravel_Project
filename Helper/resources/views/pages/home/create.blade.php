@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/ceate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/volunteer.css')}}">
       {{-- <!--<link rel="stylesheet" href="css/ceate.css">--> --}}
   </head>
   <body>
@@ -58,8 +59,8 @@
 
                     <hr class="mb-3">
 
-                    <input id="botton" class="" type="submit" value="Send">
-
+                    <input id="botton"  class="btn btn-outline-light botton" type="submit" value="Send">
+                    <a style="margin-top: 10px" class="btn btn-outline-light botton" href="/home">Back</a>
                 </div>
             </div>
     </div>

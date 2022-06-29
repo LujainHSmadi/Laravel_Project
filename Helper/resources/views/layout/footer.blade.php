@@ -1,32 +1,21 @@
 
       <!-- Page Footer-->
-      <footer class="section footer-minimal context-dark">
-        <div class="container wow-outer">
-          <div class="wow fadeIn">
-            <div class="row row-50 row-lg-60">
-              <div class="col-12"><a href="index.html"><img src="images/logo-inverse-415x103.png" alt="" width="207" height="51"/></a></div>
-              <div class="col-12">
-                <ul class="footer-minimal-nav">
-                  <li><a href="about">About Us</a></li>
-                  <li><a href="#">Causes</a></li>
-                  <li><a href="services">services</a></li>
-                  <li><a href="about">Team</a></li>
-                  <li><a href="contact">Contacts</a></li>
-                </ul>
-              </div>
-              <div class="col-12">
-                <ul class="social-list">
-                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-youtube-play" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-pinterest-p" href="#"></a></li>
-                </ul>
-              </div>
-            </div>
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Helper</span><span>.&nbsp;</span><span>All Rights Reserved.</span><span></span></p>
-          </div>
+
+      <footer class="text-center text-white " style="background-color: #444141; height: 150px">
+        <!-- Grid container -->
+        <div class="container p-4"></div>
+
+
+        <div class="col-12"><a href="index.html"><img src="{{asset('images/logo-inverse-415x103.png')}}" alt="" width="207" height="51"/></a></div>
+
+
+
+        <!-- Copyright -->
+        <div class="text-center p-3">
+     © 2022 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">Helpers</a>
         </div>
+        <!-- Copyright -->
       </footer>
     </div>
     <div class="snackbars" id="form-output-global"></div>

@@ -10,7 +10,7 @@
     <div class="container-fluid">
 
   <!--Start Dashboard Content-->
-  
+
 	<div class="card mt-3">
     <div class="card-content">
         <div class="row row-group m-0">
@@ -35,7 +35,7 @@
 	<div class="row">
 	 <div class="col-12 col-lg-12">
 	   <div class="card">
-	     <div class="card-header"> Admin Tables
+	     <div class="card-header"> Donate Tables
 		  <div class="card-action">
              <div class="dropdown">
              <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
@@ -73,7 +73,7 @@
                     @endphp
                     @foreach ($donates as $info)
                     <tr>
-                    <td>{{++$i}}</td>					
+                    <td>{{++$i}}</td>
                     <td>{{$info->name}}</td>
                     <td>{{$info->email}}</td>
                     <td>{{$info->number}}</td>
@@ -83,21 +83,21 @@
                        {{$item}}
                    @endforeach --}}
                   {{$info->tools}}
-                    
+
                     </td>
                     <td>{{$info->created_at}}</td>
                     <td>{{$info->updated_at}}</td>
-                    <td> <a href="donate/{{$info->id}}/edit" class="btn btn-primary">Edit</button></a></td>					
+                    <td> <a href="donate/{{$info->id}}/edit" class="btn btn-primary">Edit</button></a></td>
                     <td>
                        <form action="{{ route('donate.destroy',$info->id )}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
                        </form>
-                       </td>					
+                       </td>
                    </tr>
                     @endforeach
-                   
+
 
                  </tbody></table>
                </div>

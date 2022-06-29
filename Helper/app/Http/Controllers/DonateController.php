@@ -59,11 +59,11 @@ if ($request == true) {
     $donate->address = $request->input('address');
     $donate->tools = $request->input(['tools']);
     $donate->save();
-    return redirect('/don')
+    return redirect('/services')
         ->with(('status' . 'Your informasion submited successfully'));}
 
-        
-    
+
+
     }
 
     /**

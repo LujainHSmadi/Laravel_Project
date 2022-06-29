@@ -14,6 +14,8 @@
             </div>
           </div>
         </div>
+
+
       </section>
       <section class="section section-lg text-center bg-default">
         <div class="container">
@@ -27,6 +29,8 @@
                 </div>
               </div>
             </div>
+
+
             <div class="col-md-6 col-lg-4">
               <div class="box-icon-classic">
                 <div class="box-icon-inner decorate-circle decorate-color-secondary-2"><span class="icon-xl linearicons-map2 icon-gradient-2"></span></div>
@@ -35,6 +39,8 @@
                 </div>
               </div>
             </div>
+
+
             <div class="col-md-6 col-lg-4">
               <div class="box-icon-classic">
                 <div class="box-icon-inner decorate-rectangle decorate-color-primary"><span class="icon-xl linearicons-paper-plane icon-gradient-3"></span></div>
@@ -47,6 +53,15 @@
           </div>
         </div>
       </section>
+      @if ($message= Session::get('success'))
+      <div class="alert alert-success" role="alert">
+          {{ $message }}
+      </div>
+      @elseif ($message= Session::get('status'))
+      <div class="alert alert-danger" role="alert" style="color:red">
+          {{ $message }}
+      </div>
+      @endif
       <!-- Contact us-->
       <section class="section section-lg bg-gray-1 text-center">
         <div class="container">
@@ -54,7 +69,8 @@
             <div class="col-md-9 col-lg-7">
               <h3>Get in Touch</h3>
               <!-- RD Mailform-->
-              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{route('contact.store')}}">
+                @csrf
                 <div class="form-wrap">
                   <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
                   <label class="form-label" for="contact-name">Your Name</label>
@@ -64,7 +80,7 @@
                   <label class="form-label" for="contact-email">E-mail</label>
                 </div>
                 <div class="form-wrap">
-                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Numeric">
+                  <input class="form-input" id="contact-phone" type="text" name="phone_number" data-constraints="@Numeric">
                   <label class="form-label" for="contact-phone">Phone</label>
                 </div>
                 <div class="form-wrap">

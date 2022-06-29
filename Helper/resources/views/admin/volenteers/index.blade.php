@@ -34,7 +34,7 @@
 	<div class="row">
 	 <div class="col-12 col-lg-12">
 	   <div class="card">
-	     <div class="card-header">Users Tables
+	     <div class="card-header">Volenteers Tables
 		  <div class="card-action">
              <div class="dropdown">
              <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
@@ -54,14 +54,15 @@
                  <table class="table align-items-center table-flush table-borderless">
                   <thead>
                    <tr>
-                     <th>NUM</th>
+                     <th>No.</th>
                      <th>Name</th>
                      <th>Email</th>
-                     <th>age</th>
-                     <th>number</th>
-                     <th>address</th>
-                     <th>career</th>
-                     <th style="width: 350px">Actions</th>
+                     <th>Age</th>
+                     <th>Number</th>
+                     <th>Address</th>
+                     <th>Career</th>
+                     <th >Actions</th>
+                     <th>Status</th>
 
                    </tr>
                    </thead>
@@ -80,20 +81,58 @@
                         <td>{{$item->address}}</td>
                         <td>{{$item->career}}</td>
                         <td >
-                            <div class = "row">
-
+                          <div class = "row">
+                            
                             <div class="col-lg-1" >
-                                    <form action="{{route('volenteers.destroy', $item->id)}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                    <button type="submit" class="btn btn-danger  px-4">delete</button>
-                                    </form>
+                              <form action="{{route('volenteers.destroy', $item->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger  px-4">delete</button>
+                              </form>
                             </div>
-                            </div>
+                          </div>
                         </td>
-
-                   </tr>
-                   @endforeach
+                        
+                        
+                        <td>
+                           <div class="card-action">
+             <div class="dropdown">
+               @if ($item->status == 0)
+               
+             <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+               <i class="bx bx-show me-1">Pending...</i> 
+             </a>
+          <form action="{{route('volStatus',$item->id)}}" method="POST">
+              @csrf
+             <div class="dropdown-menu dropdown-menu-right">
+              <input type="submit" class="dropdown-item" value='Approved' name='status'>
+             
+            </div>
+          </form>
+             @else
+             <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+               <i class="bx bx-show me-1">Approved</i> 
+             </a>
+             <form action="{{route('volStatus',$item->id)}}" method="POST">
+              @csrf
+              <div class="dropdown-menu dropdown-menu-right">
+              <input type="submit" class="dropdown-item" value='Pending...' name='status'>
+             
+            </div>
+            </form>
+            @endif 
+             
+            
+              </div>
+             </div>
+     </div>
+                      
+                           
+                       
+                        </td>
+                        
+                      </tr>
+                      @endforeach
 
                  </tbody></table>
                </div>

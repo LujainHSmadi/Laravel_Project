@@ -35,7 +35,7 @@
 	<div class="row">
 	 <div class="col-12 col-lg-12">
 	   <div class="card">
-	     <div class="card-header">Users Tables
+	     <div class="card-header">cases Tables
 		  <div class="card-action">
              <div class="dropdown">
              <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
@@ -59,8 +59,9 @@
                      <th>Name</th>
                      <th>Phone</th>
                      <th>address</th>
+                     <th>National ID</th>
                      <th>description</th>
-                     <th style="width: 350px">Status</th>
+                     <th>Status</th>
                      <th >Actions</th>
 
 
@@ -75,23 +76,47 @@
 
                         <th>{{$i++}}</th>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->Phone}}</td>
+                        <td>{{$item->phone}}</td>
                         <td>{{$item->address}}</td>
+                        <td>{{$item->social_security}}</td>
                         <td>{{$item->description}}</td>
-                        
+
                         <td class = "row">
-                           <form action="{{route('toggle',$item->id)}}" method="POST">
-                            @csrf
-                            {{-- @method('PUT') --}}
-                            <div class="col-lg-1">
-                              <input type="checkbox" name='status'>
-                               <button type="submit" class="btn btn-danger">Update</button>
-                            </div>
-                            
-                          </form>
+                          <div class="card-action">
+             <div class="dropdown">
+               @if ($item->status == 0)
+               
+             <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+               <i class="bx bx-show me-1">In progress</i> 
+             </a>
+          <form action="{{route('toggle',$item->id)}}" method="POST">
+              @csrf
+             <div class="dropdown-menu dropdown-menu-right">
+              <input type="submit" class="dropdown-item" value='Done' name='status'>
+             
+            </div>
+          </form>
+             @else
+             <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+               <i class="bx bx-show me-1">Done</i> 
+             </a>
+             <form action="{{route('toggle',$item->id)}}" method="POST">
+              @csrf
+              <div class="dropdown-menu dropdown-menu-right">
+              <input type="submit" class="dropdown-item" value='In progress' name='status'>
+             
+            </div>
+            </form>
+            @endif 
+             
+            
+              </div>
+             </div>
+     </div>
+                      
 
 
-  
+
                         </td>
 <td >
                             <div class = "row">

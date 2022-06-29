@@ -11,7 +11,6 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="/register/css/style.css">
-
 </head>
 <body>
 
@@ -56,19 +55,19 @@
                             @error('password')
                             <div class="alert alert-danger mt-1 mb-1" style="color:red">{{ $message }}</div>
                                @enderror
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
-                            </div>
+                            </div> --}}
 
 
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" style="background-color:rgb(103, 200, 103)"/>
                             </div>
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="/register/images/n.png" alt="sing up image" style=""></figure>
+                        <figure><img src="/register/images/im.png" alt="sing up image" style="height: 200px;width:400px"></figure>
                         <a href="/userform" class="signup-image-link">I am already member !!</a>
                     </div>
                 </div>

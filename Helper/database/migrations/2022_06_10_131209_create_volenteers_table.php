@@ -21,6 +21,7 @@ class CreateVolenteersTable extends Migration
             $table->string('number');
             $table->string('address');
             $table->string('career');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

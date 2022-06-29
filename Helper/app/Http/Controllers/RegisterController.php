@@ -46,6 +46,7 @@ class RegisterController extends Controller
             'password' => 'required|max:25|min:8|'
 
         ]);
+<<<<<<< HEAD
      
     
     
@@ -62,6 +63,12 @@ class RegisterController extends Controller
         $users->save();
            return redirect('/userform');
         // }
+=======
+        $data = $request->all();
+        $data['password'] = Hash::make($data['password']);
+        register::create($data);
+        return redirect('/userform');
+>>>>>>> fdb9feb27ec46200e6a344a1fb74d152e32e0866
     }
 
     /**
@@ -73,7 +80,11 @@ class RegisterController extends Controller
     public function show($id)
     {
         $users = register::find($id);
+<<<<<<< HEAD
         return view('register.profile',['item'=>$users]);
+=======
+        return view('/home');
+>>>>>>> fdb9feb27ec46200e6a344a1fb74d152e32e0866
 
     }
 
@@ -86,7 +97,11 @@ class RegisterController extends Controller
     public function edit($id)
     {
         $item = register::find($id);
+<<<<<<< HEAD
         return view('register.profile',compact('item'));
+=======
+        return view('/home');
+>>>>>>> fdb9feb27ec46200e6a344a1fb74d152e32e0866
     }
 
     /**
@@ -104,6 +119,7 @@ class RegisterController extends Controller
              
         //    return redirect('users/create')->with('failure','password does not match');
         //          }else{
+<<<<<<< HEAD
         //$users=new register;
         $users->name=$request->input('name');
         $users->email=$request->input('email');
@@ -118,6 +134,19 @@ class RegisterController extends Controller
         return redirect('/profile/'.$users->id);
       }
 
+=======
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+        
+        $users->save(); 
+        if(Session::has('id')){
+        if (Admin::findorFail(Session::get('id'))) {
+            return redirect('/home');
+        }}
+        return view('register.profile' , compact('users'));
+       
+    }
+>>>>>>> fdb9feb27ec46200e6a344a1fb74d152e32e0866
     /**
      * Remove the specified resource from storage.
      *
@@ -143,10 +172,22 @@ class RegisterController extends Controller
    }
 
 
+<<<<<<< HEAD
 // public function create(Request $request)
 // {
 
 // }
+=======
+
+
+            if (Hash::check($password, $users->password) == true) {
+
+                $request->session()->put('email', $users['email']);
+                return redirect('/home');
+            } else {
+                return redirect('login')->with('incorrect_password', 'Password Incorrect');
+            }
+>>>>>>> fdb9feb27ec46200e6a344a1fb74d152e32e0866
 
 
    public function loginForm(){
@@ -172,6 +213,7 @@ class RegisterController extends Controller
             return redirect('login')->with('incorrect_password' , 'Password Incorrect');
         }
 
+<<<<<<< HEAD
        }else
        {
            return "Email Does not Exist"; 
@@ -179,3 +221,13 @@ class RegisterController extends Controller
      }
 
 }
+=======
+    
+    public function profileShow($id)
+    {    $users = register::find($id);
+        return view('register.profile')->with('users',$users);
+ 
+    }
+
+}
+>>>>>>> fdb9feb27ec46200e6a344a1fb74d152e32e0866
