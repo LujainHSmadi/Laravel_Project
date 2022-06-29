@@ -7,14 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,300i,400,500,600,700,800,900,900i%7CRoboto:400%7CRubik:100,400,700">
-    <link rel="stylesheet" href={{asset('/css/bootstrap.css')}}>
-    <link rel="stylesheet" href={{asset('/css/fonts.css')}}>
-    <link rel="stylesheet" href={{asset('/css/style.css')}}>
-    @yield('style')
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{asset('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')}}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
-    <div class="ie-panel"><a href="#"><img src="/images/decor-wave-bottom.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="ie-panel"><a href="#"><img src="{{asset('images/decor-wave-bottom.jpg')}}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader">
       <div class="preloader-body">
         <div class="cssload-container">
@@ -36,30 +41,59 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a href="index.html"><img class="brand-logo-light" src="images/logo-inverse-415x103.png" alt="" width="207" height="51"/></a></div>
+                  <div class="rd-navbar-brand"><a href="index.html"><img class="brand-logo-light" src="{{asset('images/logo-inverse-415x103.png')}}" alt="" width="207" height="51"/></a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="/home">Home</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/about">About Us</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/services">Services</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="/contact">Contact us</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/contact">Contacts</a>
                       </li>
                     </ul>
                     {{-- <a class="button button-primary button-sm" href="#">Donate</a> --}}
                   </div>
+                  
+                </div>
+               
+                {{-- <a class="button button-primary button-sm " href="login">Log In</a> --}}
+                @if (!Session::has('email'))
+              
+                <a href="register.login" class="nav-item nav-link ">login</a>
+                <a href="register.signup" class="nav-item nav-link">sign up</a>
+                
+                @else
 
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:green">Profile</a>
+                    <div class="dropdown-menu bg-light m-0">
+                    
+                        <a href={{route('profile',$users->id)}} class="dropdown-item">account</a>
+                        <a href="home" class="dropdown-item">logout</a>
+                    </div>
                 </div>
 
-                <a class="button button-primary button-sm " href="/userform">login</a>
+                @endif
+                
+                {{-- <ul>
+                  @if(Session()->has('name'))
+                   <li><a href="/userform">Log In</a></li>
+                   <li><a href="/users/create">Sign up</a></li>
+                   @else
 
+                   <li><a href="/profile{id}">Account</a></li>
+                   <li><a href="/userform">Log out</a></li>
+                   @endif
+                </ul> --}}
+                
               </div>
             </div>
           </nav>
         </div>
+        
       </header>
